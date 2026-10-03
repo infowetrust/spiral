@@ -146,6 +146,13 @@ remote**. The July page was untracked. That is not a Git backup. The archived
 prototype in this folder is a local safety copy only. No commit or remote push
 was requested or performed during the revision.
 
+Publication update, 2 October 2026: the project now has a committed `main` branch
+and a public remote backup at [infowetrust/spiral](https://github.com/infowetrust/spiral).
+GitHub Pages is configured to serve the repository root at
+`spiral.infowetrust.com`; initial DNS and HTTPS setup is tracked in the publishing
+instructions. The earlier no-backup warning describes the September revisit,
+not the current Git state.
+
 ## Attribution
 
 Weather: Open-Meteo / ECMWF / Copernicus (see dataset notes, CC BY 4.0). Sports:
