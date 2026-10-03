@@ -36,6 +36,7 @@
   const state = {
     mode: "tempHigh",
     scheme: "continuous",
+    sqrtByMode: {},
     window: 1,
     summary: "contour",
     view: "area",
@@ -221,6 +222,11 @@
   };
   const active = () => datasets[state.mode];
   const isNumeric = () => Boolean(active());
+  const usesSqrt = () =>
+    isNumeric() &&
+    !active().pivot &&
+    state.scheme === "continuous" &&
+    (state.sqrtByMode[state.mode] ?? Boolean(active().sqrt));
   const isPost = (g) =>
     /post|playoff|final|division|wild.?card|championship/i.test(g.phase || "");
   const isPlayIn = (g) => /play.?in/i.test(g.phase || "");
@@ -249,7 +255,7 @@
           .range([0, 0.5, 1])
           .clamp(true);
       } else {
-        position = (ds.sqrt ? d3.scaleSqrt() : d3.scaleLinear())
+        position = (usesSqrt() ? d3.scaleSqrt() : d3.scaleLinear())
           .domain([min, max === min ? min + 1 : max])
           .range([0, 1])
           .clamp(true);
@@ -695,11 +701,11 @@
         ? "Equal-count bins; tied values stay together."
         : state.scheme === "quantize"
         ? "Equal-width numeric intervals."
-        : ds.sqrt
+        : usesSqrt()
         ? "Square-root scale gives smaller values more contrast."
         : ds.pivot
         ? "Color midpoint: 65°F."
-        : "Continuous numeric scale.";
+        : "Linear color scale.";
     if (state.scheme !== "continuous")
       foot += " Range labels are approximate; exact limits on hover.";
     if (state.window > 1)
@@ -1279,6 +1285,13 @@
       scale = createScale(active(), displayValues);
     }
     $("scheme-select").disabled = !isNumeric();
+    $("sqrt-control").hidden = !isNumeric() || Boolean(active()?.pivot);
+    $("sqrt-scale").disabled = !isNumeric() || state.scheme !== "continuous";
+    $("sqrt-scale").checked = usesSqrt();
+    $("sqrt-control").title =
+      state.scheme === "continuous"
+        ? "Square-root or linear color scaling"
+        : "Available with the Continuous color scale";
     $("smooth-select").disabled = !isNumeric();
     $("summary-select").disabled = !isNumeric();
     $("summary-area").disabled = state.mode === "tempHigh";
@@ -1341,6 +1354,10 @@
   );
   $("reverse").addEventListener("change", (e) => {
     state.direction = e.target.checked ? -1 : 1;
+    render();
+  });
+  $("sqrt-scale").addEventListener("change", (e) => {
+    state.sqrtByMode[state.mode] = e.target.checked;
     render();
   });
   document.querySelectorAll("[data-view]").forEach((b) =>

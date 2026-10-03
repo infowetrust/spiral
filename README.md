@@ -72,6 +72,12 @@ before comparing this revision with the older best-match weather snapshot:
   precipitation, wind-energy, and particulate distributions use a disclosed
   square-root scale. Temperature retains the prototype's 65 F color reference;
   this is not a heat threshold or climatological anomaly.
+- Square-root color scaling is switchable for non-temperature numeric series.
+  Turning it off uses a linear scale. Each dataset remembers its choice during
+  the page session; precipitation, wind energy, and PM2.5 default to square root.
+  Binned scales disable the toggle without discarding that choice. Cells, legend,
+  ribbon colors, and exports share the active mapping; values and summary geometry
+  are unchanged.
 - Discrete legends name actual intervals, with units once. Equal-count bins
   preserve ties and may have unequal populations or fewer effective colors.
   Zeros are separate for nonnegative event metrics. Missing data is hatched.

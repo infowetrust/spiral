@@ -159,7 +159,89 @@ try {
         assert.equal(result.bins, result.breaks.length + 1);
     }
   }
+  await page.selectOption("#color-select", "windEnergy");
+  await page.selectOption("#scheme-select", "continuous");
+  await page.selectOption("#smooth-select", "21");
+  await page.selectOption("#summary-select", "ribbon");
+  assert(await page.isChecked("#sqrt-scale"));
+  const mapping = () =>
+    page.evaluate(() => {
+      const s = SF_DEBUG.getScale();
+      return {
+        min: s.min,
+        max: s.max,
+        midpoint: s.position.invert(0.5),
+        values: SF_DEBUG.getDisplay(),
+        cells: [...document.querySelectorAll(".cell")].map((n) =>
+          n.getAttribute("fill")
+        ),
+        ribbon: [...document.querySelectorAll(".summary-ribbon")].map((n) => ({
+          d: n.getAttribute("d"),
+          fill: n.getAttribute("fill"),
+        })),
+      };
+    });
+  const sqrtMapping = await mapping();
+  assert(
+    Math.abs(
+      sqrtMapping.midpoint -
+        ((Math.sqrt(sqrtMapping.min) + Math.sqrt(sqrtMapping.max)) / 2) ** 2
+    ) < 1e-8
+  );
+  await page.uncheck("#sqrt-scale");
+  const linearMapping = await mapping();
+  assert(
+    Math.abs(
+      linearMapping.midpoint - (linearMapping.min + linearMapping.max) / 2
+    ) < 1e-8
+  );
+  assert.deepEqual(linearMapping.values, sqrtMapping.values);
+  assert.notDeepEqual(linearMapping.cells, sqrtMapping.cells);
+  assert.deepEqual(
+    linearMapping.ribbon.map((n) => n.d),
+    sqrtMapping.ribbon.map((n) => n.d)
+  );
+  assert.notDeepEqual(
+    linearMapping.ribbon.map((n) => n.fill),
+    sqrtMapping.ribbon.map((n) => n.fill)
+  );
+  assert(
+    (await page.locator("#legend .legend-foot").innerText()).startsWith(
+      "Linear color scale."
+    )
+  );
+  await page.screenshot({
+    path: "test-results/wind-linear-toggle.png",
+    fullPage: true,
+  });
+  await page.selectOption("#color-select", "tempHigh");
+  assert(await page.locator("#sqrt-control").isHidden());
+  await page.selectOption("#color-select", "windEnergy");
+  assert.equal(await page.isChecked("#sqrt-scale"), false);
+  await page.check("#sqrt-scale");
+  for (const scheme of ["quantile", "quantize"]) {
+    await page.selectOption("#scheme-select", scheme);
+    assert(await page.locator("#sqrt-scale").isDisabled());
+    assert.equal(await page.isChecked("#sqrt-scale"), false);
+    assert(
+      !(await page.locator("#legend .legend-foot").innerText()).includes(
+        "Square-root"
+      )
+    );
+  }
+  await page.selectOption("#scheme-select", "continuous");
+  assert(await page.isChecked("#sqrt-scale"));
+  assert.deepEqual((await mapping()).cells, sqrtMapping.cells);
+  await page.screenshot({
+    path: "test-results/wind-sqrt-toggle.png",
+    fullPage: true,
+  });
+  for (const mode of ["sports", "events", "month"]) {
+    await page.selectOption("#color-select", mode);
+    assert(await page.locator("#sqrt-control").isHidden());
+  }
   await page.selectOption("#color-select", "precipitation");
+  await page.selectOption("#smooth-select", "1");
   await page.selectOption("#scheme-select", "continuous");
   const raw = await page.evaluate(() => SF_DEBUG.getDisplay().slice());
   await page.selectOption("#smooth-select", "7");

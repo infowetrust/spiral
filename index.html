@@ -17,7 +17,7 @@
       content="Explore ten years of weather, home games, and the city's annual rhythms in a daily time spiral."
     />
     <meta property="og:url" content="https://spiral.infowetrust.com/" />
-    <link rel="stylesheet" href="styles.css?v=e74e9a6" />
+    <link rel="stylesheet" href="styles.css?v=sqrt-toggle-1" />
     <script defer src="vendor/d3.v7.min.js"></script>
     <script defer src="data/weather.js"></script>
     <script defer src="data/sports.js"></script>
@@ -25,7 +25,7 @@
     <script defer src="data/events.js"></script>
     <script defer src="core.js"></script>
     <script defer src="export.js"></script>
-    <script defer src="app.js?v=e74e9a6"></script>
+    <script defer src="app.js?v=sqrt-toggle-1"></script>
   </head>
   <body>
     <main>
@@ -145,6 +145,9 @@
               <option value="21">21-day mean</option>
             </select></label
           >
+          <label class="reverse" id="sqrt-control" hidden>
+            <input type="checkbox" id="sqrt-scale" />Square-root color scale
+          </label>
           <label class="field"
             >Seasonal summary<select id="summary-select">
               <option id="summary-area" value="area">Filled area</option>

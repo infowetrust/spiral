@@ -197,6 +197,13 @@ select:disabled {
   width: 16px;
   height: 16px;
 }
+.reverse[hidden] {
+  display: none;
+}
+#sqrt-control:has(input:disabled) {
+  color: var(--muted);
+  cursor: default;
+}
 .export {
   flex-shrink: 0;
   border: 1px solid var(--border);
