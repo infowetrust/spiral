@@ -131,6 +131,7 @@
     windEnergy: {
       label: "Wind energy",
       unit: "Wh/m² per day",
+      shortUnit: "Wh/m²/day",
       precision: 0,
       stops: ["#e9f3f8", "#9ecae1", "#3182bd", "#08306b"],
       sqrt: true,
@@ -141,6 +142,7 @@
     precipitation: {
       label: "Precipitation",
       unit: "inches per day",
+      shortUnit: "in/day",
       precision: 2,
       stops: ["#e8f2fa", "#c6dbef", "#6baed6", "#08519c"],
       sqrt: true,
@@ -151,6 +153,7 @@
     solar: {
       label: "Solar radiation",
       unit: "MJ/m² per day",
+      shortUnit: "MJ/m²/day",
       precision: 1,
       stops: ["#d7dde3", "#8ecae6", "#fee08b", "#f46d43"],
       zero: true,
@@ -160,6 +163,7 @@
     fogProxy: {
       label: "Fog / marine-layer proxy",
       unit: "qualifying hours per day",
+      shortUnit: "h/day",
       precision: 0,
       stops: ["#fff7bc", "#d9f0a3", "#78c6a3", "#2b8cbe", "#253494"],
       zero: true,
@@ -520,6 +524,14 @@
   function drawLabels() {
     const g = $("labels");
     g.replaceChildren();
+    const width = $("spiral").getBoundingClientRect().width;
+    // Reserve label margins on phones rather than introducing smaller type.
+    const extent = width < 480 ? 1220 : 1000;
+    const inset = (1000 - extent) / 2;
+    $("spiral").setAttribute(
+      "viewBox",
+      `${inset} ${inset} ${extent} ${extent}`
+    );
     const year = Number(end.slice(0, 4));
     for (let month = 0; month < 12; month++) {
       const a = (Date.UTC(year, month, 1) - Date.parse(start)) / C.DAY,
@@ -551,13 +563,15 @@
         g
       );
     }
-    const scale = $("spiral").getBoundingClientRect().width / 1000;
+    const scale = width / extent;
     const fontSize =
       parseFloat(
         getComputedStyle(document.querySelector(".center-unit")).fontSize
       ) / scale;
+    $("spiral").style.setProperty("--chart-text-size", `${fontSize}px`);
     const gap = 4 / scale;
     [0, n - 1].forEach((i, k) => {
+      const innerGap = 8 / scale;
       const angle = geo.angle(i);
       // The oldest year occupies the empty side of the spiral's starting edge.
       const radius =
@@ -568,10 +582,10 @@
         "text",
         {
           class: "year-label",
-          x: x + side * gap,
+          x: x + side * (k ? gap : innerGap),
           y: k
             ? y
-            : y - state.direction * Math.cos(angle) * (fontSize / 2 + gap),
+            : y - state.direction * Math.cos(angle) * (fontSize / 2 + innerGap),
           "text-anchor": side > 0 ? "start" : "end",
           "dominant-baseline": "central",
           "font-size": fontSize,
@@ -592,6 +606,11 @@
       keys = $("legend-keys");
     root.replaceChildren();
     keys.replaceChildren();
+    $("dataset-unit").textContent = isNumeric()
+      ? active().shortUnit || active().unit
+      : "";
+    $("dataset-unit").title = isNumeric() ? active().unit : "";
+    $("dataset-unit").hidden = !isNumeric();
     const available = isNumeric()
       ? dates.filter((_, i) => Number.isFinite(active().values[i]))
       : [];
@@ -605,7 +624,6 @@
       note.style.flexBasis = "100%";
     }
     if (!isNumeric()) {
-      html("div", categoricalTitle(), "legend-title", root);
       const cats = html("div", undefined, "legend-categories", root);
       if (state.mode === "month")
         C.MONTHS.forEach((m, i) => key(cats, m, months[i]));
@@ -640,9 +658,7 @@
       }
       return;
     }
-    const ds = active(),
-      title = html("div", ds.label, "legend-title", root);
-    html("span", ds.unit, "legend-unit", title);
+    const ds = active();
     if (state.scheme === "continuous") {
       const ramp = html("div", undefined, "ramp", root);
       ramp.style.background =
@@ -663,8 +679,7 @@
         t.style.left = scale.position(v) * 100 + "%";
       });
     } else {
-      const bins = html("div", undefined, "bins", root),
-        edges = [scale.min, ...scale.breaks, scale.max];
+      const edges = [scale.min, ...scale.breaks, scale.max];
       let precision = ds.precision;
       while (
         precision < 6 &&
@@ -677,28 +692,151 @@
         precision++;
       const boundary = (v) =>
         v.toLocaleString("en-US", { maximumFractionDigits: precision });
+      const counts = scale.colors.map(() => 0);
+      displayValues.forEach((value) => {
+        if (Number.isFinite(value) && !(ds.zero && value === 0))
+          counts[d3.bisectRight(scale.breaks, value)]++;
+      });
+      const width = root.clientWidth || 300;
+      const chart = el(
+        "svg",
+        {
+          class: "bin-chart",
+          width: "100%",
+          height: 108,
+          viewBox: `0 0 ${width} 108`,
+          role: "group",
+          "aria-label":
+            "Days by value interval. Width shows numeric range; height shows day count.",
+        },
+        undefined,
+        root
+      );
+      const x = d3
+        .scaleLinear()
+        .domain([
+          scale.min,
+          scale.max === scale.min ? scale.min + 1 : scale.max,
+        ])
+        .range([0, width]);
+      const height = d3
+        .scaleLinear()
+        .domain([0, Math.max(1, ...counts)])
+        .range([0, 70]);
+      const detail = html(
+        "div",
+        `${d3.sum(counts).toLocaleString()} colored days`,
+        "bin-detail",
+        root
+      );
+      const defaultDetail = detail.textContent;
       scale.colors.forEach((color, i) => {
-        const b = html("div", undefined, "bin", bins);
-        html("div", undefined, "bin-color", b).style.background = color;
-        const label =
-          scale.colors.length === 1
-            ? boundary(scale.min)
-            : i === 0
-            ? `< ${boundary(edges[1])}`
-            : i === scale.colors.length - 1
-            ? `≥ ${boundary(edges[i])}`
-            : `${boundary(edges[i])}–<${boundary(edges[i + 1])}`;
-        html("div", label, "bin-label", b);
-        b.title = `${i === 0 ? "-∞" : edges[i]} ≤ value < ${
-          i === scale.colors.length - 1 ? "∞" : edges[i + 1]
-        } ${ds.unit}${ds.zero ? "; zero is separate" : ""}`;
+        const left = x(edges[i]);
+        const w = scale.min === scale.max ? width : x(edges[i + 1]) - left;
+        const label = `${edges[i]} ${
+          i === counts.length - 1 ? "≤ value ≤" : "≤ value <"
+        } ${edges[i + 1]} ${ds.unit}: ${counts[i].toLocaleString()} days`;
+        const group = el(
+          "g",
+          {
+            class: "histogram-bin",
+            tabindex: 0,
+            role: "img",
+            "aria-label": label,
+            "data-count": counts[i],
+            "data-low": edges[i],
+            "data-high": edges[i + 1],
+          },
+          undefined,
+          chart
+        );
+        el("title", {}, label, group);
+        // Empty bins still support pointer inspection without a visible swatch.
+        el(
+          "rect",
+          {
+            class: "bin-hit",
+            x: left,
+            y: 10,
+            width: w,
+            height: 70,
+            fill: "transparent",
+            "pointer-events": "all",
+          },
+          undefined,
+          group
+        );
+        el(
+          "rect",
+          {
+            class: "bin-column",
+            x: left,
+            y: 80 - height(counts[i]),
+            width: w,
+            height: height(counts[i]),
+            fill: color,
+          },
+          undefined,
+          group
+        );
+        const count = counts[i].toLocaleString();
+        const show = () => {
+          detail.textContent = `${boundary(edges[i])}–${
+            i === counts.length - 1 ? "" : "<"
+          }${boundary(edges[i + 1])} ${
+            ds.shortUnit || ds.unit
+          } · ${count} days`;
+        };
+        const hide = () => {
+          detail.textContent = defaultDetail;
+        };
+        group.addEventListener("pointerenter", show);
+        group.addEventListener("pointerleave", hide);
+        group.addEventListener("focus", show);
+        group.addEventListener("blur", hide);
+      });
+      // Keep only non-colliding numeric ticks; every bin retains exact accessible bounds.
+      let right = -Infinity;
+      edges.forEach((value, i) => {
+        if (scale.min === scale.max && i > 0) return;
+        const label = boundary(value),
+          estimated = label.length * 7;
+        const px = x(value),
+          last = i === edges.length - 1;
+        const left =
+          i === 0 ? 0 : last ? width - estimated : px - estimated / 2;
+        if (
+          !last &&
+          i > 0 &&
+          (left < right + 7 ||
+            left + estimated > width - boundary(scale.max).length * 7 - 7)
+        )
+          return;
+        el(
+          "line",
+          { x1: px, x2: px, y1: 80, y2: 84, stroke: "currentColor" },
+          undefined,
+          chart
+        );
+        el(
+          "text",
+          {
+            x: px,
+            y: 99,
+            "text-anchor": i === 0 ? "start" : last ? "end" : "middle",
+            class: "histogram-label",
+          },
+          label,
+          chart
+        );
+        right = left + estimated;
       });
     }
     if (ds.zero) key(keys, "Zero", null, "zero");
     key(keys, "Not available", null, "missing");
     let foot =
       state.scheme === "quantile"
-        ? "Equal-count bins; tied values stay together."
+        ? "Equal-count bins; ties stay together."
         : state.scheme === "quantize"
         ? "Equal-width numeric intervals."
         : usesSqrt()
@@ -706,8 +844,7 @@
         : ds.pivot
         ? "Color midpoint: 65°F."
         : "Linear color scale.";
-    if (state.scheme !== "continuous")
-      foot += " Range labels are approximate; exact limits on hover.";
+    if (state.scheme !== "continuous") foot += " Width = range; height = days.";
     if (state.window > 1)
       foot += ` Colors show ${state.window}-day means, including means on dry/zero days.`;
     html("div", foot, "legend-foot", root);
@@ -830,6 +967,39 @@
         );
       }
     }
+    // A shared radial ruler makes the summary's magnitude explicit without
+    // adding another ring that could be mistaken for a year of observations.
+    el(
+      "path",
+      {
+        class: "season-scale",
+        d: "M500,302V341M497,302H503M497,341H503",
+      },
+      undefined,
+      g
+    );
+    el(
+      "text",
+      {
+        class: "season-scale-label",
+        x: 500,
+        y: 293,
+        "text-anchor": "middle",
+      },
+      tick(filled ? Math.max(Math.abs(min), Math.abs(max)) : max),
+      g
+    );
+    el(
+      "text",
+      {
+        class: "season-scale-label",
+        x: 500,
+        y: 355,
+        "text-anchor": "middle",
+      },
+      filled ? "0" : tick(min),
+      g
+    );
     if (filled) {
       $(
         "summary-caption"
@@ -933,16 +1103,7 @@
         note = "Missing dates remain visible as hatching.";
       } else if (state.mode === "tempHigh") {
         heading = "A late warm season";
-        const sept = C.monthly(dates, ds.values)[8].value,
-          oct = C.monthly(dates, ds.values)[9].value,
-          july = C.monthly(dates, ds.values)[6].value;
-        body = `${
-          C.MONTHS[top.month]
-        } has the highest average daily high (${fmt(
-          top.value
-        )}°F). September averages ${fmt(sept)}°F; October ${fmt(
-          oct
-        )}°F; July ${fmt(july)}°F.`;
+        body = `${C.MONTHS[top.month]} has the highest mean daily high.`;
         const march = valid.filter((d) => dates[d.i].startsWith("2026-03")),
           mp = march.reduce((a, b) => (a.v > b.v ? a : b), {
             v: -Infinity,
@@ -954,13 +1115,11 @@
         const delta =
           C.mean(march.map((d) => d.v)) - C.mean(earlier.map((d) => d.v));
         note = Number.isFinite(mp.v)
-          ? `March 2026 averaged ${delta.toFixed(
+          ? `March 2026: ${delta >= 0 ? "+" : ""}${delta.toFixed(
               1
-            )}°F warmer than the earlier Marches here; peak ${fmt(
-              mp.v
-            )}°F on ${C.dateLabel(
+            )}°F vs. earlier Marches; peak ${fmt(mp.v)}°F on ${C.dateLabel(
               dates[mp.i]
-            )}. Modeled, not station-record highs.`
+            )}. Modeled, not station records.`
           : "March 2026 is not yet covered by this snapshot.";
       } else if (state.mode === "fogProxy") {
         heading = "Does “Fogust” hold up?";
@@ -1023,25 +1182,48 @@
       }
     }
     $("summary-sidebar").replaceChildren();
-    html(
-      "h2",
-      isNumeric() ? active().label : categoricalTitle(),
-      undefined,
-      root
-    );
-    html(
+    const title = html("h2", undefined, undefined, root);
+    const fullTitle = isNumeric() ? active().label : categoricalTitle();
+    title.setAttribute("aria-label", fullTitle);
+    html("span", fullTitle, "full-title", title);
+    const shortTitle =
+      {
+        tempHigh: "Daily high",
+        precipitation: "Rainfall",
+        fogProxy: "Fog proxy",
+        windEnergy: "Wind energy",
+        windMax: "Max. wind",
+        solar: "Solar energy",
+        air: "PM2.5",
+        month: "Calendar",
+        events: "Annual events",
+      }[state.mode] ||
+      (selectedTeams().length === 1
+        ? teams[selectedTeams()[0]].name
+        : "Home games");
+    html("span", shortTitle, "compact-title", title);
+    const unit = html(
       "p",
-      isNumeric()
-        ? `${active().unit}${
-            state.window > 1 ? ` · ${state.window}-day mean` : ""
-          }`
-        : "Ten years, day by day",
+      isNumeric() ? active().shortUnit || active().unit : "10 years",
       "center-unit",
       root
     );
+    if (isNumeric() && state.window > 1)
+      html("span", ` · ${state.window}-day mean`, "center-window", unit);
+    if (isNumeric() && state.summary !== "off")
+      html("p", "Seasonal mean · 21-day smoothing", "center-season", root);
     const narrative = document.createElement("div");
     narrative.className = "narrative";
     html("h3", heading, undefined, narrative);
+    if (state.mode === "tempHigh") {
+      const monthly = C.monthly(dates, active().values);
+      const comparisons = html("dl", undefined, "comparisons", narrative);
+      [8, 9, 6].forEach((month) => {
+        const pair = html("div", undefined, undefined, comparisons);
+        html("dt", `${C.MONTHS[month]} mean high`, undefined, pair);
+        html("dd", `${fmt(monthly[month].value)}°F`, undefined, pair);
+      });
+    }
     html("p", body, undefined, narrative);
     html("p", note, "note", narrative);
     root.append(narrative);
@@ -1488,6 +1670,7 @@
     new ResizeObserver(() => {
       placeSummary();
       drawLabels();
+      renderLegend();
     }).observe(stage);
   }
   const latest = dates.findLastIndex((_, i) =>

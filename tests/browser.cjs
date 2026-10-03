@@ -118,6 +118,8 @@ try {
     path: "test-results/temperature-desktop.png",
     fullPage: true,
   });
+  await page.locator(".display-options > summary").click();
+  await page.locator(".inspection-details > summary").click();
   for (const mode of [
     "tempHigh",
     "precipitation",
@@ -129,7 +131,7 @@ try {
   ]) {
     await page.selectOption("#color-select", mode);
     assert.equal(
-      await page.locator("#center-copy h2").innerText(),
+      await page.locator("#center-copy h2").getAttribute("aria-label"),
       await page.evaluate(() => SF_DEBUG.datasets[SF_DEBUG.state.mode].label)
     );
     for (const scheme of ["continuous", "quantile", "quantize"]) {
@@ -147,7 +149,7 @@ try {
         return {
           tieError,
           breaks: s.breaks,
-          bins: document.querySelectorAll(".bin").length,
+          bins: document.querySelectorAll(".histogram-bin").length,
           emptyPath: [...document.querySelectorAll("path")].some((p) =>
             /NaN|undefined/.test(p.getAttribute("d") || "")
           ),
@@ -285,7 +287,7 @@ try {
     for (const id of ["warriors", "valkyries", "giants"])
       await page.locator(`#team-${id}`).setChecked(id === team);
     assert.equal(
-      await page.locator("#center-copy h2").innerText(),
+      await page.locator("#center-copy h2").getAttribute("aria-label"),
       `${name} home games`
     );
     const fills = await page
@@ -303,7 +305,7 @@ try {
   }
   await page.uncheck("#team-giants");
   assert.equal(
-    await page.locator("#center-copy h2").innerText(),
+    await page.locator("#center-copy h2").getAttribute("aria-label"),
     "No teams selected"
   );
   assert.equal(await page.locator(".post-marker").count(), 0);
@@ -375,8 +377,16 @@ try {
         assert(!source.includes("foreignObject"));
         assert(!source.includes("127.0.0.1"));
         assert(source.includes("SF home games"));
-        if (scope === "page") assert(source.includes("Warriors"));
-        else assert(!source.includes("San Francisco, day by day"));
+        if (scope === "page") {
+          assert(source.includes("Warriors"));
+          assert(
+            source.includes("Design &amp; visualization © 2026 RJ Andrews.")
+          );
+          assert(source.includes("data:image/svg+xml;base64,"));
+        } else {
+          assert(!source.includes("San Francisco, day by day"));
+          assert(!source.includes("RJ Andrews"));
+        }
       }
     }
   }

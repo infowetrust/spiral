@@ -13,6 +13,7 @@
     "font-family",
     "font-size",
     "font-weight",
+    "font-style",
     "paint-order",
     "text-anchor",
     "opacity",
@@ -54,15 +55,20 @@
       };
     };
     const text = (value, r, style, parent = svg) => {
-      context.font = `${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
+      context.font = `${style.fontStyle} ${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
       const metrics = context.measureText(value);
       const ascent =
         metrics.fontBoundingBoxAscent ?? parseFloat(style.fontSize) * 0.85;
+      const descent =
+        metrics.fontBoundingBoxDescent ?? parseFloat(style.fontSize) * 0.15;
       make(
         "text",
         {
           x: r.x,
-          y: r.y + ascent,
+          y:
+            r.y +
+            ascent +
+            (r.height === undefined ? 0 : (r.height - ascent - descent) / 2),
           fill: style.color,
           "font-family": style.fontFamily,
           "font-size": style.fontSize,
@@ -245,8 +251,12 @@
           text(
             value,
             {
-              x: r.x + 10,
-              y: r.y + (r.height - parseFloat(style.fontSize)) / 2 - 1,
+              x:
+                r.x +
+                parseFloat(style.borderLeftWidth) +
+                parseFloat(style.paddingLeft),
+              y: r.y,
+              height: r.height,
             },
             style
           );
@@ -254,7 +264,7 @@
             make(
               "path",
               {
-                d: `M${r.x + r.width - 17},${r.y + 15}l4,4l4,-4`,
+                d: `M${r.x + r.width - 17},${r.y + r.height / 2 - 2}l4,4l4,-4`,
                 fill: "none",
                 stroke: style.color,
                 "stroke-width": 1.5,

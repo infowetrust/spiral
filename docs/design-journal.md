@@ -320,3 +320,42 @@ An annual-events layer adds a different kind of seasonality: races, parades, mus
 Burning Man deliberately breaks the geographic boundary. The user identified its SF significance as an exodus: many locals leave the city. It is labeled as a Nevada event, with its official span rather than guessed travel days or attendance counts. This expands the chart's subject from things physically within city limits to rhythms experienced by the city.
 
 Daily cells remain the exact temporal encoding. Each category has a distinct color and an emoji mnemonic; diagonal stripes retain multiple identities on overlapping dates. Optional small emoji sit at the midpoint of an edition, with colliding symbols omitted rather than moved to false dates. The underlying colored days are never removed by symbol decluttering. Independent switches let the reader isolate each annual rhythm, and the center title follows the selection. This layer has no numerical smoothing or seasonal area: categorical occurrence is not a measured continuous quantity.
+
+### October 3: A Compact Contemporary Statistical Plate
+
+Cheysson is a reference for technical composition, not period styling. The useful precedent is the integration of many quantitative elements: charts, scales, tables, and annotations share space without each demanding a large heading or separate panel. No antique-paper treatment or historical lettering reconstruction is intended.
+
+The local style proof keeps the original 320-360 pixel sidebar width. A square wheel is already height-limited on wide screens, so narrowing the sidebar does not necessarily enlarge the chart. Compactness here is vertical: at 1440 x 900 the default sidebar falls from approximately 1,035 to 700 pixels, while its width remains 348 pixels and the wheel remains 860 pixels square. Some space is recovered by collapsing secondary display settings and day inspection, not by deleting their capabilities.
+
+Primary controls use aligned label/value rows. A modest system-serif masthead and chart title, italic caption-sized observations, and tabular numeric comparisons distinguish roles without oversized headings. The temperature interpretation includes September, October, and July mean highs as three aligned quantities. Georgia is the local proof's serif; no proprietary Adobe font files are copied or distributed.
+
+The seasonal summary now has a small radial ruler marking its actual domain. Non-temperature filled areas retain a true zero baseline; temperature retains its range-scaled contour. This ruler and the center's seasonal-mean caption distinguish the summary from the surrounding daily observations. Geometry, data, daily color mappings, and the 21-day seasonal smoothing are unchanged. Compact unit notation keeps the center readable on small screens; full units and dataset limitations remain in the legend and source notes.
+
+Verification: existing geometry, state, browser, event, and export tests, plus `node tests/style.cjs` for vertical footprint, six datasets across five viewport widths, center text bounds, keyboard disclosures, and seasonal ruler visibility. This is an unpublished local design revision for review.
+
+The dataset title also becomes its selector. Title, units, color key, scale controls, and smoothing now form one continuous block rather than a settings form followed by a repeated legend heading. The native select preserves keyboard behavior; compact units sit alongside it, with full unit wording available on hover and in the dataset notes. Sidebar width and wheel dimensions remain unchanged.
+
+### Legends as Distributions; Four Type Roles
+
+The subtitle is now "The Spiral Almanac" and unsmoothed observations are labeled "None (daily)." Discrete legends become variable-width column charts across the same numeric span as the continuous palette. Column width represents the actual numeric interval; height represents the number of colored days in that interval, not probability density. Column area therefore does not encode frequency. Equal-range bins have equal widths; equal-count bins often differ considerably in width. Tied values remain together, so equal-count heights are not necessarily identical. Counts use the currently displayed values, including the selected smoothing window. Missing values and separately keyed zeros do not enter colored bins.
+
+Columns share a zero baseline and a linear count-height scale. Each bin exposes its exact bounds and count on hover and keyboard focus. Numeric tick labels are thinned when they collide, without changing or equalizing the underlying bin widths. All columns, counts, and bounds remain vector elements in SVG exports.
+
+A rendered-text audit at 1440 x 900 found 13 distinct family/size/weight/style combinations on the previous default page, including unintended sizes created by SVG scaling. The revised default has four roles:
+
+| Role | Family | Size | Style |
+| --- | --- | --- | --- |
+| Title | Georgia | 24 px | Regular |
+| Body and numeric labels | System sans | 13 px | Regular |
+| Emphasis and selected measure | System sans | 13 px | Semibold |
+| Annotation and subtitle | Georgia | 13 px | Italic |
+
+Both named sizes are CSS tokens. Chart labels compensate for SVG scaling to retain the body text size. Small screens use the emphasis role and shorter center titles rather than additional tiny type sizes. Phone charts reserve additional label margins; desktop geometry and dimensions are unchanged. Event emoji are category symbols, outside these four text roles. The universal 13 px body is intentionally more readable than the previous mixture of 10-13 px supporting text. The default sidebar now measures approximately 729 px tall at the audited viewport, still below the original 1,035 px.
+
+`node tests/type-audit.cjs` records the visible text styles. `node tests/histogram.cjs` verifies counts, numeric-width proportions, count-height proportions, colors, exclusions, smoothing, keyboard details, resizing, and SVG/PNG export. The normal responsive and interaction suites also pass.
+
+The name is shortened to "Spiral Almanac." Bin legends now contain only the columns and numeric axis: the separate baseline color strip and its white gap are removed. Per-column counts appear on hover or keyboard focus rather than as permanent labels. Empty bins retain an invisible pointer target, not a colored strip or artificially tall bar.
+
+### Author Footer
+
+The left panel ends with the Info We Trust wordmark and "Design & visualization © 2026 RJ Andrews." The original wordmark is reused from `https://isotype.infowetrust.com/InfoWeTrust-BigCaslon-black.svg`, retained in `vendor/infowetrust-wordmark.svg`, and embedded in the page so offline SVG and PNG exports are self-contained. It remains a brand asset rather than a new interface text style. Isotype's image-collection and fair-use statements are not copied: this project credits its datasets separately in its data notes. Whole-page exports include the author footer; square wheel exports do not. On desktop, flexible space places the footer at the bottom of the sidebar when content is short; on smaller screens it follows the content normally.

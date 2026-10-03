@@ -34,6 +34,8 @@ for (const event of E.records) {
     await page.goto(
       process.env.SF_TEST_URL || "file://" + path.resolve("index.html")
     );
+    await page.locator(".display-options > summary").click();
+    await page.locator(".inspection-details > summary").click();
     await page.selectOption("#color-select", "events");
     const dayCount = await page.evaluate(() => SF_DEBUG.dates.length);
     assert.equal(
@@ -69,13 +71,13 @@ for (const event of E.records) {
     );
     assert.equal(await page.locator(".event-marker").count(), 0);
     assert.equal(
-      await page.locator("#center-copy h2").textContent(),
+      await page.locator("#center-copy h2").getAttribute("aria-label"),
       "No events selected"
     );
     for (const event of E.categories) {
       await page.check("#event-" + event.id);
       assert.equal(
-        await page.locator("#center-copy h2").textContent(),
+        await page.locator("#center-copy h2").getAttribute("aria-label"),
         event.name
       );
       assert((await page.locator(`.cell[fill='${event.color}']`).count()) > 0);

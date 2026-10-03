@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>San Francisco / Ten Years in a Spiral</title>
+    <title>San Francisco / Spiral Almanac</title>
     <meta
       name="description"
       content="Ten years of San Francisco, day by day: weather, home games, and annual events in an equal-area time spiral by RJ Andrews."
@@ -11,28 +11,28 @@
     <meta name="author" content="RJ Andrews / Info We Trust" />
     <link rel="canonical" href="https://spiral.infowetrust.com/" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="San Francisco, day by day" />
+    <meta property="og:title" content="San Francisco / Spiral Almanac" />
     <meta
       property="og:description"
       content="Explore ten years of weather, home games, and the city's annual rhythms in a daily time spiral."
     />
     <meta property="og:url" content="https://spiral.infowetrust.com/" />
-    <link rel="stylesheet" href="styles.css?v=sqrt-toggle-1" />
+    <link rel="stylesheet" href="styles.css?v=almanac-20261003" />
     <script defer src="vendor/d3.v7.min.js"></script>
     <script defer src="data/weather.js"></script>
     <script defer src="data/sports.js"></script>
     <script defer src="data/air.js"></script>
     <script defer src="data/events.js"></script>
     <script defer src="core.js"></script>
-    <script defer src="export.js"></script>
-    <script defer src="app.js?v=sqrt-toggle-1"></script>
+    <script defer src="export.js?v=almanac-20261003"></script>
+    <script defer src="app.js?v=almanac-20261003"></script>
   </head>
   <body>
     <main>
       <aside class="sidebar" aria-label="Chart settings and context">
         <header>
           <div>
-            <h1>San Francisco, day by day</h1>
+            <h1>San Francisco<span>Spiral Almanac</span></h1>
             <p class="meta" id="meta">Ten years in a spiral</p>
           </div>
           <button
@@ -77,8 +77,12 @@
           <p id="export-status" role="status"></p>
         </section>
         <section class="toolbar" aria-label="Chart controls">
-          <label class="field"
-            >Color by<select id="color-select">
+          <div class="dataset-heading">
+            <select
+              id="color-select"
+              aria-label="Dataset"
+              aria-describedby="dataset-unit"
+            >
               <option value="tempHigh">High temperature</option>
               <option value="precipitation">Precipitation</option>
               <option value="fogProxy">Fog / marine-layer proxy</option>
@@ -89,8 +93,9 @@
               <option value="sports">SF home games</option>
               <option value="events">SF annual events</option>
               <option value="month">Calendar month</option>
-            </select></label
-          >
+            </select>
+            <p id="dataset-unit" class="dataset-unit"></p>
+          </div>
           <fieldset id="sports-teams" class="sports-teams" hidden>
             <legend>Home teams</legend>
             <label
@@ -131,16 +136,22 @@
               markers</label
             >
           </fieldset>
+          <section class="legend-section" aria-label="Color legend">
+            <div class="legend-main" id="legend"></div>
+            <div class="key-group" id="legend-keys"></div>
+          </section>
           <label class="field"
-            >Color scale<select id="scheme-select">
+            ><span>Color scale</span
+            ><select id="scheme-select">
               <option value="continuous">Continuous</option>
               <option value="quantile">Equal counts</option>
               <option value="quantize">Equal ranges</option>
             </select></label
           >
           <label class="field"
-            >Daily smoothing<select id="smooth-select">
-              <option value="1">None</option>
+            ><span>Smoothing</span
+            ><select id="smooth-select">
+              <option value="1">None (daily)</option>
               <option value="7">7-day mean</option>
               <option value="21">21-day mean</option>
             </select></label
@@ -148,50 +159,83 @@
           <label class="reverse" id="sqrt-control" hidden>
             <input type="checkbox" id="sqrt-scale" />Square-root color scale
           </label>
-          <label class="field"
-            >Seasonal summary<select id="summary-select">
-              <option id="summary-area" value="area">Filled area</option>
-              <option value="contour">Polar contour</option>
-              <option value="ribbon">Variable ribbon</option>
-              <option value="off">None</option>
-            </select></label
-          >
-          <div class="field">
-            <span>View</span>
-            <div class="segments" aria-label="View">
-              <button type="button" data-view="area" aria-pressed="true">
-                Area</button
-              ><button type="button" data-view="necklace" aria-pressed="false">
-                Necklace
-              </button>
+          <details class="display-options">
+            <summary>Display</summary>
+            <div class="display-fields">
+              <label class="field"
+                ><span>Seasonal mean</span
+                ><select id="summary-select">
+                  <option id="summary-area" value="area">Filled area</option>
+                  <option value="contour">Polar contour</option>
+                  <option value="ribbon">Variable ribbon</option>
+                  <option value="off">None</option>
+                </select></label
+              >
+              <div class="field">
+                <span>View</span>
+                <div class="segments" aria-label="View">
+                  <button type="button" data-view="area" aria-pressed="true">
+                    Area</button
+                  ><button
+                    type="button"
+                    data-view="necklace"
+                    aria-pressed="false"
+                  >
+                    Necklace
+                  </button>
+                </div>
+              </div>
+              <label class="reverse"
+                ><input type="checkbox" id="reverse" />Counterclockwise</label
+              >
             </div>
-          </div>
-          <label class="reverse"
-            ><input type="checkbox" id="reverse" />Counterclockwise</label
-          >
-        </section>
-        <section class="legend-section" aria-label="Color legend">
-          <div class="legend-main" id="legend"></div>
-          <div class="key-group" id="legend-keys"></div>
+          </details>
         </section>
         <div id="summary-sidebar"></div>
-        <section class="inspection" aria-label="Inspect a day">
-          <label class="field"
-            >Date<input type="date" id="inspect-date"
-          /></label>
-          <p id="inspect-value" aria-live="polite"></p>
-          <div class="source-links" id="inspect-links"></div>
-        </section>
+        <details class="inspection-details">
+          <summary>Inspect a day</summary>
+          <section class="inspection" aria-label="Inspect a day">
+            <label class="field"
+              >Date<input type="date" id="inspect-date"
+            /></label>
+            <p id="inspect-value" aria-live="polite"></p>
+            <div class="source-links" id="inspect-links"></div>
+          </section>
+        </details>
         <details class="source-section">
           <summary>About this data</summary>
           <div class="source-content" id="source-content"></div>
           <p class="summary-caption" id="summary-caption"></p>
         </details>
         <footer class="footer">
-          <span>One revolution = 365.24219 days</span>
-          <span>Equal area per day</span>
-          <a href="docs/design-journal.md">Design journal</a>
-          <a href="README.md">Data &amp; project notes</a>
+          <a
+            class="footer-brand"
+            href="https://infowetrust.com/"
+            aria-label="Info We Trust"
+          >
+            <!-- Embedded from vendor/infowetrust-wordmark.svg for offline image exports. -->
+            <svg
+              class="wordmark"
+              viewBox="0 0 1047.8 224.6"
+              role="img"
+              aria-label="Info We Trust"
+            >
+              <image
+                width="1047.8"
+                height="224.6"
+                href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMDQ3LjggMjI0LjYiPgogIDwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAzMC4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiAyLjEuMSBCdWlsZCAxMzYpICAtLT4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLnN0MCB7CiAgICAgICAgaXNvbGF0aW9uOiBpc29sYXRlOwogICAgICB9CgogICAgICAuc3QxIHsKICAgICAgICBsZXR0ZXItc3BhY2luZzogMGVtOwogICAgICB9CgogICAgICAuc3QxLCAuc3QyLCAuc3QzIHsKICAgICAgICBmb250LWZhbWlseTogQmlnQ2FzbG9uRkItQmxhY2ssICdCaWcgQ2FzbG9uIENDJzsKICAgICAgICBmb250LXNpemU6IDIwMHB4OwogICAgICAgIGZvbnQtd2VpZ2h0OiA4MDA7CiAgICAgIH0KCiAgICAgIC5zdDMgewogICAgICAgIGxldHRlci1zcGFjaW5nOiAwZW07CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgPC9kZWZzPgogIDxnIGlkPSJMYXllcl8yIj4KICAgIDxnIGlkPSJMYXllcl8yLTIiPgogICAgICA8ZyBpZD0iQmlnX0Nhc2xvbiIgY2xhc3M9InN0MCI+CiAgICAgICAgPHRleHQgY2xhc3M9InN0MiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAxNzIpIj48dHNwYW4geD0iMCIgeT0iMCI+aW5mbyA8L3RzcGFuPjwvdGV4dD4KICAgICAgICA8dGV4dCBjbGFzcz0ic3QzIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzNjUuNiAxNzIpIj48dHNwYW4geD0iMCIgeT0iMCI+dzwvdHNwYW4+PC90ZXh0PgogICAgICAgIDx0ZXh0IGNsYXNzPSJzdDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUwNy4yIDE3MikiPjx0c3BhbiB4PSIwIiB5PSIwIj5lIHQ8L3RzcGFuPjwvdGV4dD4KICAgICAgICA8dGV4dCBjbGFzcz0ic3QxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg3MDYuMiAxNzIpIj48dHNwYW4geD0iMCIgeT0iMCI+cjwvdHNwYW4+PC90ZXh0PgogICAgICAgIDx0ZXh0IGNsYXNzPSJzdDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDc4NS40IDE3MikiPjx0c3BhbiB4PSIwIiB5PSIwIj51c3Q8L3RzcGFuPjwvdGV4dD4KICAgICAgPC9nPgogICAgPC9nPgogIDwvZz4KPC9zdmc+"
+              />
+            </svg>
+          </a>
+          <p class="footer-credit">
+            Design &amp; visualization © 2026 RJ Andrews.
+          </p>
+          <div class="project-notes">
+            <span>One revolution = 365.24219 days</span>
+            <span>Equal area per day</span>
+            <a href="docs/design-journal.md">Design journal</a>
+            <a href="README.md">Data &amp; project notes</a>
+          </div>
         </footer>
       </aside>
       <figure class="chart-panel">

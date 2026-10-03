@@ -1,4 +1,4 @@
-# San Francisco, Day by Day
+# San Francisco / Spiral Almanac
 
 A local, static SVG app: one day per equal-area tile, one tropical year per
 revolution. Open `index.html` directly in a browser. No build step, server,
@@ -78,8 +78,11 @@ before comparing this revision with the older best-match weather snapshot:
   Binned scales disable the toggle without discarding that choice. Cells, legend,
   ribbon colors, and exports share the active mapping; values and summary geometry
   are unchanged.
-- Discrete legends name actual intervals, with units once. Equal-count bins
+- Discrete legends are column charts: width represents each actual numeric
+  interval and height represents its day count, not density. Equal-count bins
   preserve ties and may have unequal populations or fewer effective colors.
+  Counts and exact bounds appear on hover or keyboard focus. The legend follows
+  the selected daily smoothing window.
   Zeros are separate for nonnegative event metrics. Missing data is hatched.
 - Daily smoothing averages data along time, not neighboring pixels or years.
   Centered 7/21-day windows require at least 80% of available window samples
@@ -140,7 +143,11 @@ does not change the color scale or the underlying observations.
 ```sh
 node tests/core.test.cjs
 node tests/render-state.cjs
+node tests/browser.cjs
 node tests/events.cjs
+node tests/style.cjs
+node tests/histogram.cjs
+node tests/type-audit.cjs
 python3 scripts/update-weather.py --self-test
 ```
 
@@ -172,6 +179,9 @@ the custom-domain certificate is valid, and HTTP redirects to HTTPS. Data update
 remain manual; follow the [update guide](docs/updating-data.md).
 
 ## Attribution
+
+Design and visualization: RJ Andrews / Info We Trust. The author footer uses
+the same wordmark asset as Isotype Atlas and is included in whole-page exports.
 
 Weather: Open-Meteo / ECMWF / Copernicus (see dataset notes, CC BY 4.0). Sports:
 MLB schedule API and ESPN as documented. Air: US EPA monitoring data. Libraries:
