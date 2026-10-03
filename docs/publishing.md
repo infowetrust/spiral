@@ -1,10 +1,15 @@
 # Publishing
 
-Target: https://spiral.infowetrust.com/
+Live site: https://spiral.infowetrust.com/
 
 Repository: `infowetrust/spiral`. GitHub Pages serves the root of `main`.
 `.nojekyll` bypasses Jekyll; this is a plain static app with no build step.
 `CNAME` holds the custom domain. There are no production API keys or servers.
+
+Verified 3 October 2026: Bluehost CNAME `spiral` points to
+`infowetrust.github.io` (TTL four hours), GitHub's DNS check passes, the TLS
+certificate is valid, and Enforce HTTPS is enabled. HTTP returns a 301 redirect
+to the secure URL.
 
 ## Initial Setup
 

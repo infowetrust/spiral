@@ -4,7 +4,7 @@ A local, static SVG app: one day per equal-area tile, one tropical year per
 revolution. Open `index.html` directly in a browser. No build step, server,
 account, external font, or live API call is required to view the app.
 
-Publication target: **https://spiral.infowetrust.com/**, served by GitHub Pages
+Live site: **https://spiral.infowetrust.com/**, served by GitHub Pages
 from `infowetrust/spiral`. See [publishing instructions](docs/publishing.md).
 
 The July prototype is preserved in `prototype-july-2026.html`. The revised page
@@ -160,6 +160,10 @@ GitHub Pages is configured to serve the repository root at
 `spiral.infowetrust.com`; initial DNS and HTTPS setup is tracked in the publishing
 instructions. The earlier no-backup warning describes the September revisit,
 not the current Git state.
+
+Launch verified, 3 October 2026: the Bluehost CNAME resolves to GitHub Pages,
+the custom-domain certificate is valid, and HTTP redirects to HTTPS. Data updates
+remain manual; follow the [update guide](docs/updating-data.md).
 
 ## Attribution
 
