@@ -1,0 +1,55 @@
+[
+  {
+    "id": "cny",
+    "name": "Chinese New Year Parade",
+    "emoji": "🐉",
+    "color": "#c6323e"
+  },
+  {
+    "id": "bigWheel",
+    "name": "Bring Your Own Big Wheel",
+    "emoji": "🚲",
+    "color": "#c27b16"
+  },
+  {
+    "id": "bayToBreakers",
+    "name": "Bay to Breakers",
+    "emoji": "👟",
+    "color": "#409785"
+  },
+  { "id": "carnaval", "name": "Carnaval", "emoji": "🪶", "color": "#ac3980" },
+  { "id": "pride", "name": "Pride Parade", "emoji": "🏳️‍🌈", "color": "#ce5798" },
+  {
+    "id": "marathon",
+    "name": "SF Marathon",
+    "emoji": "🏃",
+    "color": "#226da3"
+  },
+  {
+    "id": "outsideLands",
+    "name": "Outside Lands",
+    "emoji": "🎸",
+    "color": "#669437"
+  },
+  {
+    "id": "burningMan",
+    "name": "Burning Man",
+    "emoji": "🔥",
+    "color": "#da6733",
+    "location": "Black Rock Desert, Nevada",
+    "note": "Out of town, part of SF's rhythm: a period when many local participants leave for Nevada. Dates describe the official event, not measured departures or attendance."
+  },
+  {
+    "id": "folsom",
+    "name": "Folsom Street Fair",
+    "emoji": "⛓️",
+    "color": "#62616d"
+  },
+  {
+    "id": "hardlyStrictly",
+    "name": "Hardly Strictly Bluegrass",
+    "emoji": "🪕",
+    "color": "#927039"
+  },
+  { "id": "fleetWeek", "name": "Fleet Week", "emoji": "✈️", "color": "#5e64b1" }
+]

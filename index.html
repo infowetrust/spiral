@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>San Francisco / Ten Years in a Spiral</title>
+    <meta
+      name="description"
+      content="Ten years of San Francisco, day by day: weather, home games, and annual events in an equal-area time spiral by RJ Andrews."
+    />
+    <meta name="author" content="RJ Andrews / Info We Trust" />
+    <link rel="canonical" href="https://spiral.infowetrust.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="San Francisco, day by day" />
+    <meta
+      property="og:description"
+      content="Explore ten years of weather, home games, and the city's annual rhythms in a daily time spiral."
+    />
+    <meta property="og:url" content="https://spiral.infowetrust.com/" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="vendor/d3.v7.min.js"></script>
+    <script defer src="data/weather.js"></script>
+    <script defer src="data/sports.js"></script>
+    <script defer src="data/air.js"></script>
+    <script defer src="data/events.js"></script>
+    <script defer src="core.js"></script>
+    <script defer src="export.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <main>
+      <aside class="sidebar" aria-label="Chart settings and context">
+        <header>
+          <div>
+            <h1>San Francisco, day by day</h1>
+            <p class="meta" id="meta">Ten years in a spiral</p>
+          </div>
+          <button
+            class="export"
+            id="export"
+            type="button"
+            aria-label="Download image"
+            aria-haspopup="dialog"
+            aria-expanded="false"
+            title="Download image"
+          >
+            <img src="vendor/download.svg" width="18" height="18" alt="" />
+          </button>
+        </header>
+        <section
+          id="export-options"
+          class="export-options"
+          role="dialog"
+          aria-label="Download image"
+          hidden
+        >
+          <label class="field"
+            >Format<select id="export-format">
+              <option value="svg">SVG</option>
+              <option value="png">PNG</option>
+            </select></label
+          >
+          <label class="field"
+            >Include<select id="export-scope">
+              <option value="wheel">Wheel only (square)</option>
+              <option value="page">Whole page</option>
+            </select></label
+          >
+          <button id="export-save" type="button">
+            <img
+              src="vendor/download.svg"
+              width="16"
+              height="16"
+              alt=""
+            />Download
+          </button>
+          <p id="export-status" role="status"></p>
+        </section>
+        <section class="toolbar" aria-label="Chart controls">
+          <label class="field"
+            >Color by<select id="color-select">
+              <option value="tempHigh">High temperature</option>
+              <option value="precipitation">Precipitation</option>
+              <option value="fogProxy">Fog / marine-layer proxy</option>
+              <option value="windEnergy">Wind energy</option>
+              <option value="windMax">Maximum wind</option>
+              <option value="solar">Solar radiation</option>
+              <option value="air">Fine particles / PM2.5</option>
+              <option value="sports">SF home games</option>
+              <option value="events">SF annual events</option>
+              <option value="month">Calendar month</option>
+            </select></label
+          >
+          <fieldset id="sports-teams" class="sports-teams" hidden>
+            <legend>Home teams</legend>
+            <label
+              ><input id="team-warriors" type="checkbox" checked /><span
+                class="swatch"
+                style="background: #1d428a"
+              ></span
+              >Warriors <span class="team-league">NBA</span></label
+            >
+            <label
+              ><input id="team-valkyries" type="checkbox" checked /><span
+                class="swatch"
+                style="background: #ad96dc"
+              ></span
+              >Valkyries <span class="team-league">WNBA</span></label
+            >
+            <label
+              ><input id="team-giants" type="checkbox" checked /><span
+                class="swatch"
+                style="background: #fd5a1e"
+              ></span
+              >Giants <span class="team-league">MLB</span></label
+            >
+          </fieldset>
+          <fieldset
+            id="event-filters"
+            class="sports-teams event-filters"
+            hidden
+          >
+            <legend>Annual events</legend>
+            <div class="event-actions">
+              <button type="button" id="events-all">All</button
+              ><button type="button" id="events-none">None</button>
+            </div>
+            <div id="event-options"></div>
+            <label
+              ><input id="event-symbols" type="checkbox" checked />Emoji
+              markers</label
+            >
+          </fieldset>
+          <label class="field"
+            >Color scale<select id="scheme-select">
+              <option value="continuous">Continuous</option>
+              <option value="quantile">Equal counts</option>
+              <option value="quantize">Equal ranges</option>
+            </select></label
+          >
+          <label class="field"
+            >Daily smoothing<select id="smooth-select">
+              <option value="1">None</option>
+              <option value="7">7-day mean</option>
+              <option value="21">21-day mean</option>
+            </select></label
+          >
+          <label class="field"
+            >Seasonal summary<select id="summary-select">
+              <option id="summary-area" value="area">Filled area</option>
+              <option value="contour">Polar contour</option>
+              <option value="ribbon">Variable ribbon</option>
+              <option value="off">None</option>
+            </select></label
+          >
+          <div class="field">
+            <span>View</span>
+            <div class="segments" aria-label="View">
+              <button type="button" data-view="area" aria-pressed="true">
+                Area</button
+              ><button type="button" data-view="necklace" aria-pressed="false">
+                Necklace
+              </button>
+            </div>
+          </div>
+          <label class="reverse"
+            ><input type="checkbox" id="reverse" />Counterclockwise</label
+          >
+        </section>
+        <section class="legend-section" aria-label="Color legend">
+          <div class="legend-main" id="legend"></div>
+          <div class="key-group" id="legend-keys"></div>
+        </section>
+        <div id="summary-sidebar"></div>
+        <section class="inspection" aria-label="Inspect a day">
+          <label class="field"
+            >Date<input type="date" id="inspect-date"
+          /></label>
+          <p id="inspect-value" aria-live="polite"></p>
+          <div class="source-links" id="inspect-links"></div>
+        </section>
+        <details class="source-section">
+          <summary>About this data</summary>
+          <div class="source-content" id="source-content"></div>
+          <p class="summary-caption" id="summary-caption"></p>
+        </details>
+        <footer class="footer">
+          <span>One revolution = 365.24219 days</span>
+          <span>Equal area per day</span>
+          <a href="docs/design-journal.md">Design journal</a>
+          <a href="README.md">Data &amp; project notes</a>
+        </footer>
+      </aside>
+      <figure class="chart-panel">
+        <div class="stage">
+          <svg
+            id="spiral"
+            class="spiral"
+            viewBox="0 0 1000 1000"
+            role="img"
+            aria-labelledby="spiral-title spiral-desc"
+          >
+            <title id="spiral-title">San Francisco daily time spiral</title>
+            <desc id="spiral-desc">
+              Each cell is one day with equal area. Older dates are inside. A
+              complete turn spans 365.24219 days.
+            </desc>
+            <defs id="defs"></defs>
+            <g id="cells"></g>
+            <g id="postseason"></g>
+            <g id="event-markers" aria-hidden="true"></g>
+            <g id="seasonal"></g>
+            <g id="labels"></g>
+            <g id="selected"></g>
+          </svg>
+          <div class="center-copy" id="center-copy" aria-live="polite"></div>
+        </div>
+      </figure>
+      <div class="tooltip" id="tooltip" role="tooltip" hidden></div>
+      <noscript
+        >This page needs JavaScript to render the spiral. Data and sources are
+        in the data and docs folders.</noscript
+      >
+    </main>
+  </body>
+</html>

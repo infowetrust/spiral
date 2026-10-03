@@ -1,0 +1,1324 @@
+{
+  "reviewedAt": "2026-10-02",
+  "start": "2016-09-27",
+  "end": "2026-09-26",
+  "categories": [
+    {
+      "id": "cny",
+      "name": "Chinese New Year Parade",
+      "emoji": "🐉",
+      "color": "#c6323e"
+    },
+    {
+      "id": "bigWheel",
+      "name": "Bring Your Own Big Wheel",
+      "emoji": "🚲",
+      "color": "#c27b16"
+    },
+    {
+      "id": "bayToBreakers",
+      "name": "Bay to Breakers",
+      "emoji": "👟",
+      "color": "#409785"
+    },
+    {
+      "id": "carnaval",
+      "name": "Carnaval",
+      "emoji": "🪶",
+      "color": "#ac3980"
+    },
+    {
+      "id": "pride",
+      "name": "Pride Parade",
+      "emoji": "🏳️‍🌈",
+      "color": "#ce5798"
+    },
+    {
+      "id": "marathon",
+      "name": "SF Marathon",
+      "emoji": "🏃",
+      "color": "#226da3"
+    },
+    {
+      "id": "outsideLands",
+      "name": "Outside Lands",
+      "emoji": "🎸",
+      "color": "#669437"
+    },
+    {
+      "id": "burningMan",
+      "name": "Burning Man",
+      "emoji": "🔥",
+      "color": "#da6733",
+      "location": "Black Rock Desert, Nevada",
+      "note": "Out of town, part of SF's rhythm: a period when many local participants leave for Nevada. Dates describe the official event, not measured departures or attendance."
+    },
+    {
+      "id": "folsom",
+      "name": "Folsom Street Fair",
+      "emoji": "⛓️",
+      "color": "#62616d"
+    },
+    {
+      "id": "hardlyStrictly",
+      "name": "Hardly Strictly Bluegrass",
+      "emoji": "🪕",
+      "color": "#927039"
+    },
+    {
+      "id": "fleetWeek",
+      "name": "Fleet Week",
+      "emoji": "✈️",
+      "color": "#5e64b1"
+    }
+  ],
+  "records": [
+    {
+      "id": "hardlyStrictly",
+      "name": "Hardly Strictly Bluegrass",
+      "start": "2016-09-30",
+      "end": "2016-10-02",
+      "status": "held",
+      "source": "https://www.jambase.com/article/hardly-strictly-bluegrass-finalizes-2016-lineup",
+      "sources": [
+        "https://www.jambase.com/article/hardly-strictly-bluegrass-finalizes-2016-lineup"
+      ]
+    },
+    {
+      "id": "fleetWeek",
+      "name": "San Francisco Fleet Week",
+      "start": "2016-10-03",
+      "end": "2016-10-10",
+      "status": "held",
+      "source": "https://www.prnewswire.com/news-releases/fleet-week-2016-tickets-go-on-sale-february-12th-at-8am-pst-300216645.html",
+      "note": "Full festival span; organizer-issued release, not just the airshow weekend.",
+      "sources": [
+        "https://www.prnewswire.com/news-releases/fleet-week-2016-tickets-go-on-sale-february-12th-at-8am-pst-300216645.html"
+      ]
+    },
+    {
+      "id": "cny",
+      "name": "San Francisco Chinese New Year Parade",
+      "start": "2017-02-11",
+      "end": "2017-02-11",
+      "status": "held",
+      "source": "https://web.archive.org/web/20170302181548/http://chineseparade.com/calendar.asp",
+      "sources": [
+        "https://web.archive.org/web/20170302181548/http://chineseparade.com/calendar.asp"
+      ]
+    },
+    {
+      "id": "bigWheel",
+      "name": "Bring Your Own Big Wheel",
+      "start": "2017-04-16",
+      "end": "2017-04-16",
+      "status": "held",
+      "source": "https://www.sfmta.com/media/6480/download?inline=",
+      "sources": [
+        "https://www.sfmta.com/media/6480/download?inline=",
+        "https://bringyourownbigwheel.com/page/3/"
+      ]
+    },
+    {
+      "id": "bayToBreakers",
+      "name": "Bay to Breakers",
+      "start": "2017-05-21",
+      "end": "2017-05-21",
+      "status": "held",
+      "source": "https://arrs.run/HP_BtB12.htm",
+      "sources": [
+        "https://arrs.run/HP_BtB12.htm"
+      ]
+    },
+    {
+      "id": "carnaval",
+      "name": "Carnaval San Francisco",
+      "start": "2017-05-27",
+      "end": "2017-05-28",
+      "status": "held",
+      "source": "https://www.sfgate.com/entertainment/article/Carnaval-San-Francisco-returns-to-Mission-District-11167496.php",
+      "sources": [
+        "https://www.sfgate.com/entertainment/article/Carnaval-San-Francisco-returns-to-Mission-District-11167496.php"
+      ]
+    },
+    {
+      "id": "pride",
+      "name": "San Francisco Pride Parade",
+      "start": "2017-06-25",
+      "end": "2017-06-25",
+      "status": "held",
+      "source": "https://www.bart.gov/news/articles/2017/news20170615",
+      "sources": [
+        "https://www.bart.gov/news/articles/2017/news20170615",
+        "https://currentsf.com/sfpride2017/"
+      ]
+    },
+    {
+      "id": "marathon",
+      "name": "San Francisco Marathon",
+      "start": "2017-07-23",
+      "end": "2017-07-23",
+      "status": "held",
+      "source": "https://www.thesfmarathon.com/blog/2017/07/25/the-san-francisco-marathon-celebrates-40th-anniversary/",
+      "sources": [
+        "https://www.thesfmarathon.com/blog/2017/07/25/the-san-francisco-marathon-celebrates-40th-anniversary/"
+      ]
+    },
+    {
+      "id": "outsideLands",
+      "name": "Outside Lands",
+      "start": "2017-08-11",
+      "end": "2017-08-13",
+      "status": "held",
+      "source": "https://www.kqed.org/arts/13002121/outside-lands-2017-lineup-metallica-lorde-gorillaz-and-more",
+      "sources": [
+        "https://www.kqed.org/arts/13002121/outside-lands-2017-lineup-metallica-lorde-gorillaz-and-more"
+      ]
+    },
+    {
+      "id": "burningMan",
+      "name": "Burning Man (Black Rock City, Nevada)",
+      "start": "2017-08-27",
+      "end": "2017-09-04",
+      "status": "held",
+      "source": "https://history.burningman.org/timeline/2017/",
+      "note": "Official Nevada event, not in San Francisco; included for SF exodus context. Dates exclude build week and post-event departure/cleanup.",
+      "sources": [
+        "https://history.burningman.org/timeline/2017/"
+      ]
+    },
+    {
+      "id": "folsom",
+      "name": "Folsom Street Fair",
+      "start": "2017-09-24",
+      "end": "2017-09-24",
+      "status": "held",
+      "source": "https://48hills.org/2017/09/folsom-2017-party-radar/",
+      "sources": [
+        "https://48hills.org/2017/09/folsom-2017-party-radar/"
+      ]
+    },
+    {
+      "id": "fleetWeek",
+      "name": "San Francisco Fleet Week",
+      "start": "2017-10-02",
+      "end": "2017-10-09",
+      "status": "held",
+      "source": "https://www.portofoakland.com/fleet-week-2017-takes-off-oakland-international-airport",
+      "note": "Full festival span; airshow October 6-8.",
+      "sources": [
+        "https://www.portofoakland.com/fleet-week-2017-takes-off-oakland-international-airport"
+      ]
+    },
+    {
+      "id": "hardlyStrictly",
+      "name": "Hardly Strictly Bluegrass",
+      "start": "2017-10-06",
+      "end": "2017-10-08",
+      "status": "held",
+      "source": "https://sfist.com/2017/09/29/heres_the_hour-by-hour_schedule_for/",
+      "sources": [
+        "https://sfist.com/2017/09/29/heres_the_hour-by-hour_schedule_for/"
+      ]
+    },
+    {
+      "id": "cny",
+      "name": "San Francisco Chinese New Year Parade",
+      "start": "2018-02-24",
+      "end": "2018-02-24",
+      "status": "held",
+      "source": "https://web.archive.org/web/20180327083049/http://www.chineseparade.com:80/calendar.asp",
+      "sources": [
+        "https://web.archive.org/web/20180327083049/http://www.chineseparade.com:80/calendar.asp"
+      ]
+    },
+    {
+      "id": "bigWheel",
+      "name": "Bring Your Own Big Wheel",
+      "start": "2018-04-01",
+      "end": "2018-04-01",
+      "status": "held",
+      "source": "https://www.sanfranciscopolice.org/sites/default/files/2018-10/SFPD-Bayview-Newsletter-2018-03-28.pdf",
+      "sources": [
+        "https://www.sanfranciscopolice.org/sites/default/files/2018-10/SFPD-Bayview-Newsletter-2018-03-28.pdf",
+        "https://bringyourownbigwheel.com/page/2/"
+      ]
+    },
+    {
+      "id": "bayToBreakers",
+      "name": "Bay to Breakers",
+      "start": "2018-05-20",
+      "end": "2018-05-20",
+      "status": "held",
+      "source": "https://www.sanfranciscopolice.org/sites/default/files/2018-10/SFPD-Park-Newsletter-2018-05-25.pdf",
+      "sources": [
+        "https://www.sanfranciscopolice.org/sites/default/files/2018-10/SFPD-Park-Newsletter-2018-05-25.pdf"
+      ]
+    },
+    {
+      "id": "carnaval",
+      "name": "Carnaval San Francisco",
+      "start": "2018-05-26",
+      "end": "2018-05-27",
+      "status": "held",
+      "source": "https://www.sfmta.com/fr/media/12881/download?inline=",
+      "sources": [
+        "https://www.sfmta.com/fr/media/12881/download?inline="
+      ]
+    },
+    {
+      "id": "pride",
+      "name": "San Francisco Pride Parade",
+      "start": "2018-06-24",
+      "end": "2018-06-24",
+      "status": "held",
+      "source": "https://www.sfcenter.org/community/sf-lgbt-center-at-pride-2018/",
+      "sources": [
+        "https://www.sfcenter.org/community/sf-lgbt-center-at-pride-2018/"
+      ]
+    },
+    {
+      "id": "marathon",
+      "name": "San Francisco Marathon",
+      "start": "2018-07-29",
+      "end": "2018-07-29",
+      "status": "held",
+      "source": "https://www.thesfmarathon.com/blog/2018/07/23/how-it-feels-to-cross-the-finish-line/",
+      "sources": [
+        "https://www.thesfmarathon.com/blog/2018/07/23/how-it-feels-to-cross-the-finish-line/",
+        "https://www.thesfmarathon.com/race-results-and-photos/"
+      ]
+    },
+    {
+      "id": "outsideLands",
+      "name": "Outside Lands",
+      "start": "2018-08-10",
+      "end": "2018-08-12",
+      "status": "held",
+      "source": "https://www.jambase.com/festival/outside-lands-2018",
+      "sources": [
+        "https://www.jambase.com/festival/outside-lands-2018"
+      ]
+    },
+    {
+      "id": "burningMan",
+      "name": "Burning Man (Black Rock City, Nevada)",
+      "start": "2018-08-26",
+      "end": "2018-09-03",
+      "status": "held",
+      "source": "https://survival.burningman.org/wp-content/uploads/2018/07/BMSG-2018.pdf",
+      "note": "Official Nevada event, not in San Francisco; included for SF exodus context. Dates exclude build week and post-event departure/cleanup. The contemporaneous survival guide takes precedence over the timeline's conflicting August 25 start.",
+      "sources": [
+        "https://survival.burningman.org/wp-content/uploads/2018/07/BMSG-2018.pdf"
+      ]
+    },
+    {
+      "id": "folsom",
+      "name": "Folsom Street Fair",
+      "start": "2018-09-30",
+      "end": "2018-09-30",
+      "status": "held",
+      "source": "https://www.cbsnews.com/sanfrancisco/news/folsom-street-fair-closures-sep30/",
+      "sources": [
+        "https://www.cbsnews.com/sanfrancisco/news/folsom-street-fair-closures-sep30/"
+      ]
+    },
+    {
+      "id": "fleetWeek",
+      "name": "San Francisco Fleet Week",
+      "start": "2018-10-01",
+      "end": "2018-10-08",
+      "status": "held",
+      "source": "https://www.sfport.com/media/4202/download",
+      "note": "Full festival span documented by the Port of San Francisco; airshow October 5-7.",
+      "sources": [
+        "https://www.sfport.com/media/4202/download"
+      ]
+    },
+    {
+      "id": "hardlyStrictly",
+      "name": "Hardly Strictly Bluegrass",
+      "start": "2018-10-05",
+      "end": "2018-10-07",
+      "status": "held",
+      "source": "https://www.jambase.com/article/hardly-strictly-bluegrass-details-full-2018-lineup",
+      "sources": [
+        "https://www.jambase.com/article/hardly-strictly-bluegrass-details-full-2018-lineup"
+      ]
+    },
+    {
+      "id": "cny",
+      "name": "San Francisco Chinese New Year Parade",
+      "start": "2019-02-23",
+      "end": "2019-02-23",
+      "status": "held",
+      "source": "https://chineseparade.com/wp-content/uploads/2019/01/2019-CNY-Parade-Year-of-the-Pig-Press-Release.pdf",
+      "sources": [
+        "https://chineseparade.com/wp-content/uploads/2019/01/2019-CNY-Parade-Year-of-the-Pig-Press-Release.pdf"
+      ]
+    },
+    {
+      "id": "bigWheel",
+      "name": "Bring Your Own Big Wheel",
+      "start": "2019-04-21",
+      "end": "2019-04-21",
+      "status": "held",
+      "source": "https://bringyourownbigwheel.com/2019-registration-is-open-event-info-in-this-post/",
+      "sources": [
+        "https://bringyourownbigwheel.com/2019-registration-is-open-event-info-in-this-post/"
+      ]
+    },
+    {
+      "id": "bayToBreakers",
+      "name": "Bay to Breakers",
+      "start": "2019-05-19",
+      "end": "2019-05-19",
+      "status": "held",
+      "source": "https://arrs.run/HP_BtB12.htm",
+      "sources": [
+        "https://arrs.run/HP_BtB12.htm",
+        "https://www.bart.gov/news/articles/2019/news20190418"
+      ]
+    },
+    {
+      "id": "carnaval",
+      "name": "Carnaval San Francisco",
+      "start": "2019-05-25",
+      "end": "2019-05-26",
+      "status": "held",
+      "source": "https://www.kqed.org/news/11748424/what-you-need-to-know-about-carnaval-san-francisco-2019",
+      "sources": [
+        "https://www.kqed.org/news/11748424/what-you-need-to-know-about-carnaval-san-francisco-2019"
+      ]
+    },
+    {
+      "id": "pride",
+      "name": "San Francisco Pride Parade",
+      "start": "2019-06-30",
+      "end": "2019-06-30",
+      "status": "held",
+      "source": "https://cdn.sfpride.org/press/STATEMENT-SF-Pride-Follow-Up-on-2019-Parade-Disruption-23-July-2019.pdf",
+      "sources": [
+        "https://cdn.sfpride.org/press/STATEMENT-SF-Pride-Follow-Up-on-2019-Parade-Disruption-23-July-2019.pdf"
+      ]
+    },
+    {
+      "id": "marathon",
+      "name": "San Francisco Marathon",
+      "start": "2019-07-28",
+      "end": "2019-07-28",
+      "status": "held",
+      "source": "https://www.sfmta.com/vi/media/18346/download?inline=",
+      "sources": [
+        "https://www.sfmta.com/vi/media/18346/download?inline=",
+        "https://www.thesfmarathon.com/race-results-and-photos/"
+      ]
+    },
+    {
+      "id": "outsideLands",
+      "name": "Outside Lands",
+      "start": "2019-08-09",
+      "end": "2019-08-11",
+      "status": "held",
+      "source": "https://stage.guinnessworldrecords.com/world-records/397705-highest-grossing-music-festival",
+      "sources": [
+        "https://stage.guinnessworldrecords.com/world-records/397705-highest-grossing-music-festival"
+      ]
+    },
+    {
+      "id": "burningMan",
+      "name": "Burning Man (Black Rock City, Nevada)",
+      "start": "2019-08-25",
+      "end": "2019-09-02",
+      "status": "held",
+      "source": "https://history.burningman.org/timeline/2019/",
+      "note": "Official Nevada event, not in San Francisco; included for SF exodus context. Dates exclude build week and post-event departure/cleanup.",
+      "sources": [
+        "https://history.burningman.org/timeline/2019/"
+      ]
+    },
+    {
+      "id": "folsom",
+      "name": "Folsom Street Fair",
+      "start": "2019-09-29",
+      "end": "2019-09-29",
+      "status": "held",
+      "source": "https://sf.funcheap.com/city-guide/folsom-street-fair-sf/",
+      "sources": [
+        "https://sf.funcheap.com/city-guide/folsom-street-fair-sf/"
+      ]
+    },
+    {
+      "id": "hardlyStrictly",
+      "name": "Hardly Strictly Bluegrass",
+      "start": "2019-10-04",
+      "end": "2019-10-06",
+      "status": "held",
+      "source": "https://www.nonesuch.com/playlists/nonesuch-hardly-strictly-bluegrass-2019",
+      "sources": [
+        "https://www.nonesuch.com/playlists/nonesuch-hardly-strictly-bluegrass-2019"
+      ]
+    },
+    {
+      "id": "fleetWeek",
+      "name": "San Francisco Fleet Week",
+      "start": "2019-10-06",
+      "end": "2019-10-14",
+      "status": "held",
+      "source": "https://fleetweeksf.org/wp-content/uploads/2019/10/2019-SFFW-MEDIA-Program-of-Events.pdf",
+      "note": "Full festival span including October 6 opening activities; October 7 was the public kickoff press conference. Airshow October 11-13. Separately dated art exhibition and setup/departure days excluded.",
+      "sources": [
+        "https://fleetweeksf.org/wp-content/uploads/2019/10/2019-SFFW-MEDIA-Program-of-Events.pdf"
+      ]
+    },
+    {
+      "id": "cny",
+      "name": "San Francisco Chinese New Year Parade",
+      "start": "2020-02-08",
+      "end": "2020-02-08",
+      "status": "held",
+      "source": "https://chineseparade.com/wp-content/uploads/2020/01/2020-CNY-Parade-Year-of-the-Rat-Press-Release_rev2.pdf",
+      "note": "The street parade took place before the COVID-19 shutdown.",
+      "sources": [
+        "https://chineseparade.com/wp-content/uploads/2020/01/2020-CNY-Parade-Year-of-the-Rat-Press-Release_rev2.pdf"
+      ]
+    },
+    {
+      "id": "bigWheel",
+      "name": "Bring Your Own Big Wheel",
+      "start": "2020-04-12",
+      "end": "2020-04-12",
+      "status": "cancelled",
+      "source": "https://bringyourownbigwheel.com/byobw-is-20-in-2020-how-you-doin-important-time-change-this-year/",
+      "note": "Scheduled date from the organizer's 2020 announcement; later cancelled/postponed to a future year.",
+      "sources": [
+        "https://bringyourownbigwheel.com/byobw-is-20-in-2020-how-you-doin-important-time-change-this-year/",
+        "https://bringyourownbigwheel.com/byobw-postponed-until-2021/"
+      ]
+    },
+    {
+      "id": "carnaval",
+      "name": "Carnaval San Francisco",
+      "start": "2020-05-23",
+      "end": "2020-05-24",
+      "status": "cancelled",
+      "source": "https://sf.funcheap.com/city-guide/carnaval-san-francisco-festival-parade-cancelled/",
+      "note": "Original in-person festival weekend did not take place; initially postponed during COVID-19. The May 24 virtual replacement is a separate record, not a held street festival.",
+      "sources": [
+        "https://sf.funcheap.com/city-guide/carnaval-san-francisco-festival-parade-cancelled/"
+      ]
+    },
+    {
+      "id": "carnaval",
+      "name": "Carnaval San Francisco (virtual)",
+      "start": "2020-05-24",
+      "end": "2020-05-24",
+      "status": "virtual",
+      "source": "https://sf.funcheap.com/city-guide/carnaval-sf-live-stream-virtual-festival-24th/",
+      "note": "Actual virtual parade and festival broadcast, 2-4 p.m.; not a two-day in-person festival.",
+      "sources": [
+        "https://sf.funcheap.com/city-guide/carnaval-sf-live-stream-virtual-festival-24th/"
+      ]
+    },
+    {
+      "id": "pride",
+      "name": "San Francisco Pride Parade",
+      "start": "2020-06-28",
+      "end": "2020-06-28",
+      "status": "cancelled",
+      "source": "https://myemail.constantcontact.com/News-from-SF-Pride--March-2020.html?aid=7u7YBEnTHbo&soid=1114998960445",
+      "note": "Official street parade cancelled. Online Pride celebrations on June 27-28 were a replacement, not a held street parade.",
+      "sources": [
+        "https://myemail.constantcontact.com/News-from-SF-Pride--March-2020.html?aid=7u7YBEnTHbo&soid=1114998960445",
+        "https://cdn.sfpride.org/press/RELEASE-APRIL-14-2020-SF-PRIDE-EVENT-CANCELLATION-__FINAL__-1.pdf"
+      ]
+    },
+    {
+      "id": "outsideLands",
+      "name": "Outside Lands",
+      "start": "2020-08-07",
+      "end": "2020-08-09",
+      "status": "cancelled",
+      "source": "https://www.jambase.com/festival/outside-lands-2020",
+      "note": "Canceled planned in-person dates. Inside Lands streamed later in August and is recorded separately.",
+      "sources": [
+        "https://www.jambase.com/festival/outside-lands-2020"
+      ]
+    },
+    {
+      "id": "outsideLands",
+      "name": "Outside Lands (Inside Lands)",
+      "start": "2020-08-28",
+      "end": "2020-08-29",
+      "status": "virtual",
+      "source": "https://apeconcerts.com/events/inside-lands-8-29/",
+      "note": "Organizer's two-day virtual replacement on Twitch; no Golden Gate Park festival.",
+      "sources": [
+        "https://apeconcerts.com/events/inside-lands-8-29/"
+      ]
+    },
+    {
+      "id": "burningMan",
+      "name": "Burning Man (Black Rock City, Nevada)",
+      "start": "2020-08-30",
+      "end": "2020-09-07",
+      "status": "cancelled",
+      "source": "https://journal.burningman.org/2020/04/news/official-announcements/brc-2020-update/",
+      "note": "Scheduled Nevada event dates; official Black Rock City cancelled due to COVID-19. A virtual Multiverse was offered instead. Neither virtual participation nor unofficial gatherings constitute a held Nevada event or an SF festival.",
+      "sources": [
+        "https://journal.burningman.org/2020/04/news/official-announcements/brc-2020-update/"
+      ]
+    },
+    {
+      "id": "bayToBreakers",
+      "name": "Bay to Breakers",
+      "start": "2020-09-20",
+      "end": "2020-10-02",
+      "status": "virtual",
+      "source": "https://capstoneraces.com/wp-content/uploads/2020/09/B2B-Virtual-Race-Guide.pdf",
+      "note": "Organizer's inclusive virtual-results submission window. The in-person race did not occur.",
+      "sources": [
+        "https://capstoneraces.com/wp-content/uploads/2020/09/B2B-Virtual-Race-Guide.pdf"
+      ]
+    },
+    {
+      "id": "folsom",
+      "name": "Folsom Street Fair",
+      "start": "2020-09-27",
+      "end": "2020-09-27",
+      "status": "virtual",
+      "source": "https://www.folsomstreet.org/folsom-street-fair-2020",
+      "note": "In-person street fair replaced by an online livestream because of COVID-19.",
+      "sources": [
+        "https://www.folsomstreet.org/folsom-street-fair-2020"
+      ]
+    },
+    {
+      "id": "fleetWeek",
+      "name": "San Francisco Fleet Week",
+      "start": "2020-09-29",
+      "end": "2020-10-11",
+      "status": "virtual",
+      "source": "https://apps.irs.gov/pub/epostcard/cor/272832209_202012_990EZ_2022102420520422.pdf",
+      "note": "Full program span reported in the organizer's 2020 Form 990-EZ. COVID-19 cancelled the live airshow; virtual programming replaced the normal festival, with the public Virtual Experience October 9-11 and an October 5 honor sail.",
+      "sources": [
+        "https://apps.irs.gov/pub/epostcard/cor/272832209_202012_990EZ_2022102420520422.pdf"
+      ]
+    },
+    {
+      "id": "hardlyStrictly",
+      "name": "Hardly Strictly Bluegrass (Let the Music Play On)",
+      "start": "2020-10-03",
+      "end": "2020-10-03",
+      "status": "virtual",
+      "source": "https://hardlystrictlybluegrass.com/archive/2020/",
+      "note": "Organizer archive identifies October 3 as the premiere of the three-hour replacement broadcast. Not a three-day in-person festival.",
+      "sources": [
+        "https://hardlystrictlybluegrass.com/archive/2020/"
+      ]
+    },
+    {
+      "id": "marathon",
+      "name": "San Francisco Marathon",
+      "start": "2020-11-15",
+      "end": "2020-11-15",
+      "status": "cancelled",
+      "source": "https://www.goldengate.org/events/cancelled-san-francisco-marathon---nov-2020/",
+      "note": "Cancelled in-person edition; date is the rescheduled November race date, not a held race or a virtual participation window.",
+      "sources": [
+        "https://www.goldengate.org/events/cancelled-san-francisco-marathon---nov-2020/"
+      ]
+    },
+    {
+      "id": "cny",
+      "name": "San Francisco Chinese New Year Parade",
+      "start": "2021-02-20",
+      "end": "2021-02-20",
+      "status": "virtual",
+      "source": "https://chineseparade.com/wp-content/uploads/2020/12/CNYP-2021-Press-Release_Final.pdf",
+      "note": "Live parade cancelled due to COVID-19; this date is the replacement television broadcast special, not an in-person parade.",
+      "sources": [
+        "https://chineseparade.com/wp-content/uploads/2020/12/CNYP-2021-Press-Release_Final.pdf"
+      ]
+    },
+    {
+      "id": "bayToBreakers",
+      "name": "Bay to Breakers",
+      "start": "2021-05-16",
+      "end": "2021-06-02",
+      "status": "virtual",
+      "source": "https://sf.funcheap.com/city-guide/bay-breakers-live-event-canceled-2021/",
+      "note": "Virtual 12K participation window; in-person edition cancelled.",
+      "sources": [
+        "https://sf.funcheap.com/city-guide/bay-breakers-live-event-canceled-2021/",
+        "https://www.sfchronicle.com/entertainment/movies-tv/article/zoey-s-extraordinary-playlist-celebrates-s-f-s-21186364.php"
+      ]
+    },
+    {
+      "id": "burningMan",
+      "name": "Burning Man (Black Rock City, Nevada)",
+      "start": "2021-08-29",
+      "end": "2021-09-06",
+      "status": "cancelled",
+      "source": "https://journal.burningman.org/2021/04/news/official-announcements/into-the-great-unknown/",
+      "note": "Scheduled Nevada event dates; official Black Rock City cancelled due to COVID-19. The separate Virtual Burn ran August 22-September 7. Unofficial desert gatherings are excluded; not an SF festival.",
+      "sources": [
+        "https://journal.burningman.org/2021/04/news/official-announcements/into-the-great-unknown/"
+      ]
+    },
+    {
+      "id": "marathon",
+      "name": "San Francisco Marathon",
+      "start": "2021-09-19",
+      "end": "2021-09-19",
+      "status": "held",
+      "source": "https://www.sfarc.org/2021-sf-marathon.html",
+      "note": "Full-marathon race day, not the entire race weekend.",
+      "sources": [
+        "https://www.sfarc.org/2021-sf-marathon.html",
+        "https://www.thesfmarathon.com/race-results-and-photos/"
+      ]
+    },
+    {
+      "id": "folsom",
+      "name": "Folsom Street Fair",
+      "start": "2021-09-26",
+      "end": "2021-09-26",
+      "status": "held",
+      "source": "https://www.folsomstreet.org/fs-events-calendar/folsom-street-presents-megahood2021",
+      "note": "Held in person as the smaller, rebranded MEGAHOOD2021; not cancelled or virtual.",
+      "sources": [
+        "https://www.folsomstreet.org/fs-events-calendar/folsom-street-presents-megahood2021"
+      ]
+    },
+    {
+      "id": "hardlyStrictly",
+      "name": "Hardly Strictly Bluegrass (Hardly Strictly Everywhere)",
+      "start": "2021-10-01",
+      "end": "2021-10-03",
+      "status": "virtual",
+      "source": "https://www.gratefulweb.com/articles/hardly-strictly-bluegrass-october-1-3-livestream/",
+      "note": "Festival publicity release contributed by The Oriel Company; three-day livestream instead of the public Golden Gate Park gathering. Organizer archive: https://hardlystrictlybluegrass.com/archive/2021/",
+      "sources": [
+        "https://www.gratefulweb.com/articles/hardly-strictly-bluegrass-october-1-3-livestream/"
+      ]
+    },
+    {
+      "id": "fleetWeek",
+      "name": "San Francisco Fleet Week",
+      "start": "2021-10-03",
+      "end": "2021-10-11",
+      "status": "held",
+      "source": "https://www.portofoakland.com/oakland-international-airport-hosts-the-blue-angels-as-part-of-fleet-week",
+      "note": "Full festival span; in-person return, with airshow October 8-10.",
+      "sources": [
+        "https://www.portofoakland.com/oakland-international-airport-hosts-the-blue-angels-as-part-of-fleet-week"
+      ]
+    },
+    {
+      "id": "outsideLands",
+      "name": "Outside Lands",
+      "start": "2021-10-29",
+      "end": "2021-10-31",
+      "status": "held",
+      "source": "https://www.sfmta.com/media/28962/download?inline=",
+      "note": "Actual Halloween edition, not the superseded August 6-8 dates. Organizer confirms the Halloween return at https://sfoutsidelands.com/festival-history/ and opening day at https://apeconcerts.com/events/outside-lands-211029/",
+      "sources": [
+        "https://www.sfmta.com/media/28962/download?inline="
+      ]
+    },
+    {
+      "id": "cny",
+      "name": "San Francisco Chinese New Year Parade",
+      "start": "2022-02-19",
+      "end": "2022-02-19",
+      "status": "held",
+      "source": "https://chineseparade.com/wp-content/uploads/2021/09/CNYP-2022-Year-of-the-Tiger-Press-Release.pdf",
+      "sources": [
+        "https://chineseparade.com/wp-content/uploads/2021/09/CNYP-2022-Year-of-the-Tiger-Press-Release.pdf"
+      ]
+    },
+    {
+      "id": "bigWheel",
+      "name": "Bring Your Own Big Wheel",
+      "start": "2022-04-17",
+      "end": "2022-04-17",
+      "status": "held",
+      "source": "https://bringyourownbigwheel.com/bring-your-own-big-wheel-is-currently-a-go-for-2022/",
+      "sources": [
+        "https://bringyourownbigwheel.com/bring-your-own-big-wheel-is-currently-a-go-for-2022/"
+      ]
+    },
+    {
+      "id": "bayToBreakers",
+      "name": "Bay to Breakers",
+      "start": "2022-05-15",
+      "end": "2022-05-15",
+      "status": "held",
+      "source": "https://www.cbsnews.com/sanfrancisco/news/reid-buchanan-julia-vasquez-top-field-in-2022-bay-to-breakers/",
+      "sources": [
+        "https://www.cbsnews.com/sanfrancisco/news/reid-buchanan-julia-vasquez-top-field-in-2022-bay-to-breakers/"
+      ]
+    },
+    {
+      "id": "carnaval",
+      "name": "Carnaval San Francisco",
+      "start": "2022-05-28",
+      "end": "2022-05-29",
+      "status": "held",
+      "source": "https://carnavalsanfrancisco.org/wp-content/uploads/2022/05/CSF2022_Festival_Map2.pdf",
+      "sources": [
+        "https://carnavalsanfrancisco.org/wp-content/uploads/2022/05/CSF2022_Festival_Map2.pdf"
+      ]
+    },
+    {
+      "id": "pride",
+      "name": "San Francisco Pride Parade",
+      "start": "2022-06-26",
+      "end": "2022-06-26",
+      "status": "held",
+      "source": "https://www.sfchronicle.com/sf/article/sf-pride-parade-returns-17264150.php",
+      "sources": [
+        "https://www.sfchronicle.com/sf/article/sf-pride-parade-returns-17264150.php"
+      ]
+    },
+    {
+      "id": "marathon",
+      "name": "San Francisco Marathon",
+      "start": "2022-07-24",
+      "end": "2022-07-24",
+      "status": "held",
+      "source": "https://www.goldengate.org/assets/1/25/2022-0624-boardmeeting-no6a-gmrpt.pdf?9149=",
+      "sources": [
+        "https://www.goldengate.org/assets/1/25/2022-0624-boardmeeting-no6a-gmrpt.pdf?9149=",
+        "https://www.thesfmarathon.com/race-results-and-photos/"
+      ]
+    },
+    {
+      "id": "outsideLands",
+      "name": "Outside Lands",
+      "start": "2022-08-05",
+      "end": "2022-08-07",
+      "status": "held",
+      "source": "https://news.pollstar.com/2022/07/14/outside-lands-announces-night-show-lineups-with-phoebe-bridgers-mac-demarco-more/",
+      "sources": [
+        "https://news.pollstar.com/2022/07/14/outside-lands-announces-night-show-lineups-with-phoebe-bridgers-mac-demarco-more/"
+      ]
+    },
+    {
+      "id": "burningMan",
+      "name": "Burning Man (Black Rock City, Nevada)",
+      "start": "2022-08-28",
+      "end": "2022-09-05",
+      "status": "held",
+      "source": "https://history.burningman.org/timeline/2022/",
+      "note": "Official Nevada event, not in San Francisco; included for SF exodus context. Dates exclude build week and post-event departure/cleanup.",
+      "sources": [
+        "https://history.burningman.org/timeline/2022/"
+      ]
+    },
+    {
+      "id": "folsom",
+      "name": "Folsom Street Fair",
+      "start": "2022-09-25",
+      "end": "2022-09-25",
+      "status": "held",
+      "source": "https://www.folsomstreet.org/fs-events-calendar/folsom-street-fair-1",
+      "sources": [
+        "https://www.folsomstreet.org/fs-events-calendar/folsom-street-fair-1"
+      ]
+    },
+    {
+      "id": "hardlyStrictly",
+      "name": "Hardly Strictly Bluegrass",
+      "start": "2022-09-30",
+      "end": "2022-10-02",
+      "status": "held",
+      "source": "https://www.kqed.org/arts/13916410/hardly-strictly-bluegrass-to-return-in-person-to-golden-gate-park-in-2022",
+      "sources": [
+        "https://www.kqed.org/arts/13916410/hardly-strictly-bluegrass-to-return-in-person-to-golden-gate-park-in-2022"
+      ]
+    },
+    {
+      "id": "fleetWeek",
+      "name": "San Francisco Fleet Week",
+      "start": "2022-10-03",
+      "end": "2022-10-11",
+      "status": "held",
+      "source": "https://media.api.sf.gov/documents/VAC_AnnualReport_2022_8JDYoir.pdf",
+      "note": "Full festival span, not just airshow October 7-9. Fog curtailed the October 8 Blue Angels performance and cancelled their October 9 performance; the festival was not cancelled.",
+      "sources": [
+        "https://media.api.sf.gov/documents/VAC_AnnualReport_2022_8JDYoir.pdf"
+      ]
+    },
+    {
+      "id": "cny",
+      "name": "San Francisco Chinese New Year Parade",
+      "start": "2023-02-04",
+      "end": "2023-02-04",
+      "status": "held",
+      "source": "https://chineseparade.com/wp-content/uploads/2023/01/CNYP-2023-Year-of-the-Rabbit-Press-Release_revised.pdf",
+      "sources": [
+        "https://chineseparade.com/wp-content/uploads/2023/01/CNYP-2023-Year-of-the-Rabbit-Press-Release_revised.pdf"
+      ]
+    },
+    {
+      "id": "bigWheel",
+      "name": "Bring Your Own Big Wheel",
+      "start": "2023-04-09",
+      "end": "2023-04-09",
+      "status": "held",
+      "source": "https://bringyourownbigwheel.com/bring-your-own-big-wheel-2023-event-deets/",
+      "sources": [
+        "https://bringyourownbigwheel.com/bring-your-own-big-wheel-2023-event-deets/"
+      ]
+    },
+    {
+      "id": "bayToBreakers",
+      "name": "Bay to Breakers",
+      "start": "2023-05-21",
+      "end": "2023-05-21",
+      "status": "held",
+      "source": "https://www.sfmta.com/notices/bay-breakers-2023",
+      "sources": [
+        "https://www.sfmta.com/notices/bay-breakers-2023",
+        "https://www.sfchronicle.com/bayarea/article/bay-to-breakers-sf-18107235.php"
+      ]
+    },
+    {
+      "id": "carnaval",
+      "name": "Carnaval San Francisco",
+      "start": "2023-05-27",
+      "end": "2023-05-28",
+      "status": "held",
+      "source": "https://www.calle24sf.org/event-details/carnaval-san-francisco-2023",
+      "sources": [
+        "https://www.calle24sf.org/event-details/carnaval-san-francisco-2023"
+      ]
+    },
+    {
+      "id": "pride",
+      "name": "San Francisco Pride Parade",
+      "start": "2023-06-25",
+      "end": "2023-06-25",
+      "status": "held",
+      "source": "https://www.sfmta.com/ja/node/28433",
+      "sources": [
+        "https://www.sfmta.com/ja/node/28433",
+        "https://www.kqed.org/news/11953967/sf-pride-2023-marks-53-years-of-lgbtq-joy-freedom-and-defiance"
+      ]
+    },
+    {
+      "id": "marathon",
+      "name": "San Francisco Marathon",
+      "start": "2023-07-23",
+      "end": "2023-07-23",
+      "status": "held",
+      "source": "https://www.endurancesportswire.com/san-francisco-marathon-2023-concludes-with-record-breaking-29000-total-participants/",
+      "sources": [
+        "https://www.endurancesportswire.com/san-francisco-marathon-2023-concludes-with-record-breaking-29000-total-participants/"
+      ]
+    },
+    {
+      "id": "outsideLands",
+      "name": "Outside Lands",
+      "start": "2023-08-11",
+      "end": "2023-08-13",
+      "status": "held",
+      "source": "https://meyersound.com/news/outside-lands-2023/",
+      "sources": [
+        "https://meyersound.com/news/outside-lands-2023/"
+      ]
+    },
+    {
+      "id": "burningMan",
+      "name": "Burning Man (Black Rock City, Nevada)",
+      "start": "2023-08-27",
+      "end": "2023-09-04",
+      "status": "held",
+      "source": "https://history.burningman.org/timeline/2023/",
+      "note": "Official Nevada event, not in San Francisco; included for SF exodus context. Dates exclude build week and post-event departure/cleanup. Rain disrupted access and delayed burns and departures; the event itself was not cancelled. The end is the official event span, not the final departure date.",
+      "sources": [
+        "https://history.burningman.org/timeline/2023/"
+      ]
+    },
+    {
+      "id": "folsom",
+      "name": "Folsom Street Fair",
+      "start": "2023-09-24",
+      "end": "2023-09-24",
+      "status": "held",
+      "source": "https://www.folsomstreet.org/fs-events-calendar/folsom-street-fair-1-kew4y",
+      "sources": [
+        "https://www.folsomstreet.org/fs-events-calendar/folsom-street-fair-1-kew4y"
+      ]
+    },
+    {
+      "id": "hardlyStrictly",
+      "name": "Hardly Strictly Bluegrass",
+      "start": "2023-09-29",
+      "end": "2023-10-01",
+      "status": "held",
+      "source": "https://sfist.com/2023/09/19/hardly-strictly-bluegrass-releases-full-schedule-and-set-times-for-next-weekends-festival/",
+      "sources": [
+        "https://sfist.com/2023/09/19/hardly-strictly-bluegrass-releases-full-schedule-and-set-times-for-next-weekends-festival/"
+      ]
+    },
+    {
+      "id": "fleetWeek",
+      "name": "San Francisco Fleet Week",
+      "start": "2023-10-02",
+      "end": "2023-10-10",
+      "status": "held",
+      "source": "https://www.sfmta.com/notices/fleet-week-2023-0",
+      "note": "Full festival span; airshow October 6-8. The threatened federal shutdown did not cancel this edition.",
+      "sources": [
+        "https://www.sfmta.com/notices/fleet-week-2023-0"
+      ]
+    },
+    {
+      "id": "cny",
+      "name": "San Francisco Chinese New Year Parade",
+      "start": "2024-02-24",
+      "end": "2024-02-24",
+      "status": "held",
+      "source": "https://chineseparade.com/wp-content/uploads/2023/09/CNYP-2024-Festival-Parade-Date-Annoucement.pdf",
+      "sources": [
+        "https://chineseparade.com/wp-content/uploads/2023/09/CNYP-2024-Festival-Parade-Date-Annoucement.pdf"
+      ]
+    },
+    {
+      "id": "bigWheel",
+      "name": "Bring Your Own Big Wheel",
+      "start": "2024-03-31",
+      "end": "2024-03-31",
+      "status": "held",
+      "source": "https://bringyourownbigwheel.com/category/news/",
+      "note": "Organizer's archived 2024 event post explicitly gives March 31, 2024.",
+      "sources": [
+        "https://bringyourownbigwheel.com/category/news/"
+      ]
+    },
+    {
+      "id": "bayToBreakers",
+      "name": "Bay to Breakers",
+      "start": "2024-05-19",
+      "end": "2024-05-19",
+      "status": "held",
+      "source": "https://sfstandard.com/2024/05/19/bay-to-breakers-thousands-pack-san-francisco-streets-for-race-day/",
+      "sources": [
+        "https://sfstandard.com/2024/05/19/bay-to-breakers-thousands-pack-san-francisco-streets-for-race-day/"
+      ]
+    },
+    {
+      "id": "carnaval",
+      "name": "Carnaval San Francisco",
+      "start": "2024-05-25",
+      "end": "2024-05-26",
+      "status": "held",
+      "source": "https://www.kqed.org/news/11987214/carnaval-san-francisco-2024-parade-route-bands-parking",
+      "sources": [
+        "https://www.kqed.org/news/11987214/carnaval-san-francisco-2024-parade-route-bands-parking"
+      ]
+    },
+    {
+      "id": "pride",
+      "name": "San Francisco Pride Parade",
+      "start": "2024-06-30",
+      "end": "2024-06-30",
+      "status": "held",
+      "source": "https://www.sfmta.com/travel-updates/sf-pride-weekend-june-27-july-1-2024",
+      "sources": [
+        "https://www.sfmta.com/travel-updates/sf-pride-weekend-june-27-july-1-2024"
+      ]
+    },
+    {
+      "id": "marathon",
+      "name": "San Francisco Marathon",
+      "start": "2024-07-28",
+      "end": "2024-07-28",
+      "status": "held",
+      "source": "https://www.goldengate.org/events/san-francisco-marathon---july-28-2024/",
+      "sources": [
+        "https://www.goldengate.org/events/san-francisco-marathon---july-28-2024/",
+        "https://www.thesfmarathon.com/race-results-and-photos/"
+      ]
+    },
+    {
+      "id": "outsideLands",
+      "name": "Outside Lands",
+      "start": "2024-08-09",
+      "end": "2024-08-11",
+      "status": "held",
+      "source": "https://sfoutsidelands.com/assets/ol24_publicletter_map.pdf",
+      "sources": [
+        "https://sfoutsidelands.com/assets/ol24_publicletter_map.pdf"
+      ]
+    },
+    {
+      "id": "burningMan",
+      "name": "Burning Man (Black Rock City, Nevada)",
+      "start": "2024-08-25",
+      "end": "2024-09-02",
+      "status": "held",
+      "source": "https://journal.burningman.org/2023/10/philosophical-center/the-theme/2024-curiouser-curiouser/",
+      "note": "Official Nevada event, not in San Francisco; included for SF exodus context. Dates exclude build week and post-event departure/cleanup.",
+      "sources": [
+        "https://journal.burningman.org/2023/10/philosophical-center/the-theme/2024-curiouser-curiouser/"
+      ]
+    },
+    {
+      "id": "folsom",
+      "name": "Folsom Street Fair",
+      "start": "2024-09-29",
+      "end": "2024-09-29",
+      "status": "held",
+      "source": "https://www.folsomstreet.org/fs-events-calendar/folsom-street-fair-2",
+      "sources": [
+        "https://www.folsomstreet.org/fs-events-calendar/folsom-street-fair-2"
+      ]
+    },
+    {
+      "id": "hardlyStrictly",
+      "name": "Hardly Strictly Bluegrass",
+      "start": "2024-10-04",
+      "end": "2024-10-06",
+      "status": "held",
+      "source": "https://www.sfstation.com/2024/09/26/hardley-strictly-bluegrass-2024-schedule-is-set/amp/",
+      "sources": [
+        "https://www.sfstation.com/2024/09/26/hardley-strictly-bluegrass-2024-schedule-is-set/amp/"
+      ]
+    },
+    {
+      "id": "fleetWeek",
+      "name": "San Francisco Fleet Week",
+      "start": "2024-10-07",
+      "end": "2024-10-14",
+      "status": "held",
+      "source": "https://www.sfmta.com/reports/fleet-week-2024",
+      "note": "Full festival span. Fog cut short the October 12 airshow and cancelled that day's Blue Angels performance, not the festival.",
+      "sources": [
+        "https://www.sfmta.com/reports/fleet-week-2024"
+      ]
+    },
+    {
+      "id": "cny",
+      "name": "San Francisco Chinese New Year Parade",
+      "start": "2025-02-15",
+      "end": "2025-02-15",
+      "status": "held",
+      "source": "https://chineseparade.com/wp-content/uploads/2025/01/CNYP-2025-Year-of-the-Snake-Press-Release.pdf",
+      "sources": [
+        "https://chineseparade.com/wp-content/uploads/2025/01/CNYP-2025-Year-of-the-Snake-Press-Release.pdf"
+      ]
+    },
+    {
+      "id": "bigWheel",
+      "name": "Bring Your Own Big Wheel",
+      "start": "2025-04-20",
+      "end": "2025-04-20",
+      "status": "held",
+      "source": "https://bringyourownbigwheel.com/events/bring-your-own-big-wheel-2025/",
+      "sources": [
+        "https://bringyourownbigwheel.com/events/bring-your-own-big-wheel-2025/"
+      ]
+    },
+    {
+      "id": "bayToBreakers",
+      "name": "Bay to Breakers",
+      "start": "2025-05-18",
+      "end": "2025-05-18",
+      "status": "held",
+      "source": "https://www.davidperry.com/newsroom/6199.html",
+      "sources": [
+        "https://www.davidperry.com/newsroom/6199.html"
+      ]
+    },
+    {
+      "id": "carnaval",
+      "name": "Carnaval San Francisco",
+      "start": "2025-05-24",
+      "end": "2025-05-25",
+      "status": "held",
+      "source": "https://carnavalsanfrancisco.org/wp-content/uploads/2025/02/The-47th-Carnaval-San-Francisco-News-Release-Final.docx-1.pdf",
+      "sources": [
+        "https://carnavalsanfrancisco.org/wp-content/uploads/2025/02/The-47th-Carnaval-San-Francisco-News-Release-Final.docx-1.pdf"
+      ]
+    },
+    {
+      "id": "pride",
+      "name": "San Francisco Pride Parade",
+      "start": "2025-06-29",
+      "end": "2025-06-29",
+      "status": "held",
+      "source": "https://sfprideband.org/performances-and-events/san-francisco-pride-parade-2025/",
+      "sources": [
+        "https://sfprideband.org/performances-and-events/san-francisco-pride-parade-2025/",
+        "https://www.nbcbayarea.com/news/local/sf-pride-parade-message-resistance/3903667/"
+      ]
+    },
+    {
+      "id": "marathon",
+      "name": "San Francisco Marathon",
+      "start": "2025-07-27",
+      "end": "2025-07-27",
+      "status": "held",
+      "source": "https://www.goldengate.org/events/san-francisco-marathon---july-27-2025/",
+      "sources": [
+        "https://www.goldengate.org/events/san-francisco-marathon---july-27-2025/",
+        "https://www.thesfmarathon.com/race-results-and-photos/"
+      ]
+    },
+    {
+      "id": "outsideLands",
+      "name": "Outside Lands",
+      "start": "2025-08-08",
+      "end": "2025-08-10",
+      "status": "held",
+      "source": "https://outsidelands.frontgatetickets.com/event/kr02pnl6fs73bn32",
+      "sources": [
+        "https://outsidelands.frontgatetickets.com/event/kr02pnl6fs73bn32"
+      ]
+    },
+    {
+      "id": "burningMan",
+      "name": "Burning Man (Black Rock City, Nevada)",
+      "start": "2025-08-24",
+      "end": "2025-09-01",
+      "status": "held",
+      "source": "https://survival.burningman.org/wp-content/uploads/2025/07/BMSG-2025.pdf",
+      "note": "Official Nevada event, not in San Francisco; included for SF exodus context. Dates exclude build week and post-event departure/cleanup.",
+      "sources": [
+        "https://survival.burningman.org/wp-content/uploads/2025/07/BMSG-2025.pdf"
+      ]
+    },
+    {
+      "id": "folsom",
+      "name": "Folsom Street Fair",
+      "start": "2025-09-28",
+      "end": "2025-09-28",
+      "status": "held",
+      "source": "https://sfstandard.com/2025/09/28/folsom-street-fair-kink-festival-photos/",
+      "sources": [
+        "https://sfstandard.com/2025/09/28/folsom-street-fair-kink-festival-photos/"
+      ]
+    },
+    {
+      "id": "hardlyStrictly",
+      "name": "Hardly Strictly Bluegrass",
+      "start": "2025-10-03",
+      "end": "2025-10-05",
+      "status": "held",
+      "source": "https://hardlystrictlybluegrass.com/wp-content/uploads/2025/09/HSB25-Print-at-Home-Schedule-BW.pdf",
+      "sources": [
+        "https://hardlystrictlybluegrass.com/wp-content/uploads/2025/09/HSB25-Print-at-Home-Schedule-BW.pdf"
+      ]
+    },
+    {
+      "id": "fleetWeek",
+      "name": "San Francisco Fleet Week",
+      "start": "2025-10-05",
+      "end": "2025-10-13",
+      "status": "held",
+      "source": "https://fleetweeksf.org/liberty-guide/solve-it-think-out-of-the-box/",
+      "note": "Full festival span. The federal shutdown cancelled Blue Angels participation, not Fleet Week or the entire airshow; the Canadian Snowbirds performed.",
+      "sources": [
+        "https://fleetweeksf.org/liberty-guide/solve-it-think-out-of-the-box/"
+      ]
+    },
+    {
+      "id": "cny",
+      "name": "San Francisco Chinese New Year Parade",
+      "start": "2026-03-07",
+      "end": "2026-03-07",
+      "status": "held",
+      "source": "https://chineseparade.com/wp-content/uploads/2025/02/2026-PARADE-ANNOUNCEMENT-DATE.docx.pdf",
+      "sources": [
+        "https://chineseparade.com/wp-content/uploads/2025/02/2026-PARADE-ANNOUNCEMENT-DATE.docx.pdf"
+      ]
+    },
+    {
+      "id": "bigWheel",
+      "name": "Bring Your Own Big Wheel",
+      "start": "2026-04-05",
+      "end": "2026-04-05",
+      "status": "held",
+      "source": "https://bringyourownbigwheel.com/events/bring-your-own-bigwheel-2026/",
+      "sources": [
+        "https://bringyourownbigwheel.com/events/bring-your-own-bigwheel-2026/",
+        "https://bringyourownbigwheel.com/category/news/"
+      ]
+    },
+    {
+      "id": "bayToBreakers",
+      "name": "Bay to Breakers",
+      "start": "2026-05-17",
+      "end": "2026-05-17",
+      "status": "held",
+      "source": "https://results.laurelt.com/bbk/results",
+      "sources": [
+        "https://results.laurelt.com/bbk/results",
+        "https://www.davidperry.com/newsroom/bay-to-breakers-marks-biggest-year-in-more-than-a-decade.html"
+      ]
+    },
+    {
+      "id": "carnaval",
+      "name": "Carnaval San Francisco",
+      "start": "2026-05-23",
+      "end": "2026-05-24",
+      "status": "held",
+      "source": "https://carnavalsanfrancisco.org/wp-content/uploads/2025/12/2026-Carnaval-SF_Sponsor-Deck.pdf",
+      "sources": [
+        "https://carnavalsanfrancisco.org/wp-content/uploads/2025/12/2026-Carnaval-SF_Sponsor-Deck.pdf"
+      ]
+    },
+    {
+      "id": "pride",
+      "name": "San Francisco Pride Parade",
+      "start": "2026-06-28",
+      "end": "2026-06-28",
+      "status": "held",
+      "source": "https://www.sfmta.com/blog/celebrate-pride-weekend-june-26-28-events-explore-and-muni-travel-tips",
+      "sources": [
+        "https://www.sfmta.com/blog/celebrate-pride-weekend-june-26-28-events-explore-and-muni-travel-tips",
+        "https://apnews.com/article/c2301920c8f656a7ee231e49ff5a08a9"
+      ]
+    },
+    {
+      "id": "marathon",
+      "name": "San Francisco Marathon",
+      "start": "2026-07-26",
+      "end": "2026-07-26",
+      "status": "held",
+      "source": "https://www.thesfmarathon.com/history/",
+      "sources": [
+        "https://www.thesfmarathon.com/history/",
+        "https://www.thesfmarathon.com/race-results-and-photos/"
+      ]
+    },
+    {
+      "id": "outsideLands",
+      "name": "Outside Lands",
+      "start": "2026-08-07",
+      "end": "2026-08-09",
+      "status": "held",
+      "source": "https://sfoutsidelands.com/faq-app/",
+      "sources": [
+        "https://sfoutsidelands.com/faq-app/"
+      ]
+    },
+    {
+      "id": "burningMan",
+      "name": "Burning Man (Black Rock City, Nevada)",
+      "start": "2026-08-30",
+      "end": "2026-09-07",
+      "status": "held",
+      "source": "https://journal.burningman.org/2026/07/black-rock-city/participate-in-brc/2026-omg-sale-tickets/",
+      "note": "Official Nevada event, not in San Francisco; included for SF exodus context. Dates exclude build week and post-event departure/cleanup.",
+      "sources": [
+        "https://journal.burningman.org/2026/07/black-rock-city/participate-in-brc/2026-omg-sale-tickets/"
+      ]
+    }
+  ],
+  "coverageNote": "A curated calendar, not a complete inventory of city events. Only sourced in-person editions are colored. Canceled and virtual editions remain in the date inspector. Blank dates mean no listed in-person event, not confirmed absence; archival gaps are documented. Future dates outside the chart are not plotted."
+}

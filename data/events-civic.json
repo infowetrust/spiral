@@ -1,0 +1,338 @@
+[
+  {
+    "id": "fleetWeek",
+    "name": "San Francisco Fleet Week",
+    "start": "2016-10-03",
+    "end": "2016-10-10",
+    "status": "held",
+    "source": "https://www.prnewswire.com/news-releases/fleet-week-2016-tickets-go-on-sale-february-12th-at-8am-pst-300216645.html",
+    "note": "Full festival span; organizer-issued release, not just the airshow weekend."
+  },
+  {
+    "id": "cny",
+    "name": "San Francisco Chinese New Year Parade",
+    "start": "2017-02-11",
+    "end": "2017-02-11",
+    "status": "held",
+    "source": "https://web.archive.org/web/20170302181548/http://chineseparade.com/calendar.asp"
+  },
+  {
+    "id": "burningMan",
+    "name": "Burning Man (Black Rock City, Nevada)",
+    "start": "2017-08-27",
+    "end": "2017-09-04",
+    "status": "held",
+    "source": "https://history.burningman.org/timeline/2017/",
+    "note": "Official Nevada event, not in San Francisco; included for SF exodus context. Dates exclude build week and post-event departure/cleanup."
+  },
+  {
+    "id": "folsom",
+    "name": "Folsom Street Fair",
+    "start": "2017-09-24",
+    "end": "2017-09-24",
+    "status": "held",
+    "source": "https://48hills.org/2017/09/folsom-2017-party-radar/"
+  },
+  {
+    "id": "fleetWeek",
+    "name": "San Francisco Fleet Week",
+    "start": "2017-10-02",
+    "end": "2017-10-09",
+    "status": "held",
+    "source": "https://www.portofoakland.com/fleet-week-2017-takes-off-oakland-international-airport",
+    "note": "Full festival span; airshow October 6-8."
+  },
+  {
+    "id": "cny",
+    "name": "San Francisco Chinese New Year Parade",
+    "start": "2018-02-24",
+    "end": "2018-02-24",
+    "status": "held",
+    "source": "https://web.archive.org/web/20180327083049/http://www.chineseparade.com:80/calendar.asp"
+  },
+  {
+    "id": "burningMan",
+    "name": "Burning Man (Black Rock City, Nevada)",
+    "start": "2018-08-26",
+    "end": "2018-09-03",
+    "status": "held",
+    "source": "https://survival.burningman.org/wp-content/uploads/2018/07/BMSG-2018.pdf",
+    "note": "Official Nevada event, not in San Francisco; included for SF exodus context. Dates exclude build week and post-event departure/cleanup. The contemporaneous survival guide takes precedence over the timeline's conflicting August 25 start."
+  },
+  {
+    "id": "folsom",
+    "name": "Folsom Street Fair",
+    "start": "2018-09-30",
+    "end": "2018-09-30",
+    "status": "held",
+    "source": "https://www.cbsnews.com/sanfrancisco/news/folsom-street-fair-closures-sep30/"
+  },
+  {
+    "id": "fleetWeek",
+    "name": "San Francisco Fleet Week",
+    "start": "2018-10-01",
+    "end": "2018-10-08",
+    "status": "held",
+    "source": "https://www.sfport.com/media/4202/download",
+    "note": "Full festival span documented by the Port of San Francisco; airshow October 5-7."
+  },
+  {
+    "id": "cny",
+    "name": "San Francisco Chinese New Year Parade",
+    "start": "2019-02-23",
+    "end": "2019-02-23",
+    "status": "held",
+    "source": "https://chineseparade.com/wp-content/uploads/2019/01/2019-CNY-Parade-Year-of-the-Pig-Press-Release.pdf"
+  },
+  {
+    "id": "burningMan",
+    "name": "Burning Man (Black Rock City, Nevada)",
+    "start": "2019-08-25",
+    "end": "2019-09-02",
+    "status": "held",
+    "source": "https://history.burningman.org/timeline/2019/",
+    "note": "Official Nevada event, not in San Francisco; included for SF exodus context. Dates exclude build week and post-event departure/cleanup."
+  },
+  {
+    "id": "folsom",
+    "name": "Folsom Street Fair",
+    "start": "2019-09-29",
+    "end": "2019-09-29",
+    "status": "held",
+    "source": "https://sf.funcheap.com/city-guide/folsom-street-fair-sf/"
+  },
+  {
+    "id": "fleetWeek",
+    "name": "San Francisco Fleet Week",
+    "start": "2019-10-06",
+    "end": "2019-10-14",
+    "status": "held",
+    "source": "https://fleetweeksf.org/wp-content/uploads/2019/10/2019-SFFW-MEDIA-Program-of-Events.pdf",
+    "note": "Full festival span including October 6 opening activities; October 7 was the public kickoff press conference. Airshow October 11-13. Separately dated art exhibition and setup/departure days excluded."
+  },
+  {
+    "id": "cny",
+    "name": "San Francisco Chinese New Year Parade",
+    "start": "2020-02-08",
+    "end": "2020-02-08",
+    "status": "held",
+    "source": "https://chineseparade.com/wp-content/uploads/2020/01/2020-CNY-Parade-Year-of-the-Rat-Press-Release_rev2.pdf",
+    "note": "The street parade took place before the COVID-19 shutdown."
+  },
+  {
+    "id": "burningMan",
+    "name": "Burning Man (Black Rock City, Nevada)",
+    "start": "2020-08-30",
+    "end": "2020-09-07",
+    "status": "cancelled",
+    "source": "https://journal.burningman.org/2020/04/news/official-announcements/brc-2020-update/",
+    "note": "Scheduled Nevada event dates; official Black Rock City cancelled due to COVID-19. A virtual Multiverse was offered instead. Neither virtual participation nor unofficial gatherings constitute a held Nevada event or an SF festival."
+  },
+  {
+    "id": "folsom",
+    "name": "Folsom Street Fair",
+    "start": "2020-09-27",
+    "end": "2020-09-27",
+    "status": "virtual",
+    "source": "https://www.folsomstreet.org/folsom-street-fair-2020",
+    "note": "In-person street fair replaced by an online livestream because of COVID-19."
+  },
+  {
+    "id": "fleetWeek",
+    "name": "San Francisco Fleet Week",
+    "start": "2020-09-29",
+    "end": "2020-10-11",
+    "status": "virtual",
+    "source": "https://apps.irs.gov/pub/epostcard/cor/272832209_202012_990EZ_2022102420520422.pdf",
+    "note": "Full program span reported in the organizer's 2020 Form 990-EZ. COVID-19 cancelled the live airshow; virtual programming replaced the normal festival, with the public Virtual Experience October 9-11 and an October 5 honor sail."
+  },
+  {
+    "id": "cny",
+    "name": "San Francisco Chinese New Year Parade",
+    "start": "2021-02-20",
+    "end": "2021-02-20",
+    "status": "virtual",
+    "source": "https://chineseparade.com/wp-content/uploads/2020/12/CNYP-2021-Press-Release_Final.pdf",
+    "note": "Live parade cancelled due to COVID-19; this date is the replacement television broadcast special, not an in-person parade."
+  },
+  {
+    "id": "burningMan",
+    "name": "Burning Man (Black Rock City, Nevada)",
+    "start": "2021-08-29",
+    "end": "2021-09-06",
+    "status": "cancelled",
+    "source": "https://journal.burningman.org/2021/04/news/official-announcements/into-the-great-unknown/",
+    "note": "Scheduled Nevada event dates; official Black Rock City cancelled due to COVID-19. The separate Virtual Burn ran August 22-September 7. Unofficial desert gatherings are excluded; not an SF festival."
+  },
+  {
+    "id": "folsom",
+    "name": "Folsom Street Fair",
+    "start": "2021-09-26",
+    "end": "2021-09-26",
+    "status": "held",
+    "source": "https://www.folsomstreet.org/fs-events-calendar/folsom-street-presents-megahood2021",
+    "note": "Held in person as the smaller, rebranded MEGAHOOD2021; not cancelled or virtual."
+  },
+  {
+    "id": "fleetWeek",
+    "name": "San Francisco Fleet Week",
+    "start": "2021-10-03",
+    "end": "2021-10-11",
+    "status": "held",
+    "source": "https://www.portofoakland.com/oakland-international-airport-hosts-the-blue-angels-as-part-of-fleet-week",
+    "note": "Full festival span; in-person return, with airshow October 8-10."
+  },
+  {
+    "id": "cny",
+    "name": "San Francisco Chinese New Year Parade",
+    "start": "2022-02-19",
+    "end": "2022-02-19",
+    "status": "held",
+    "source": "https://chineseparade.com/wp-content/uploads/2021/09/CNYP-2022-Year-of-the-Tiger-Press-Release.pdf"
+  },
+  {
+    "id": "burningMan",
+    "name": "Burning Man (Black Rock City, Nevada)",
+    "start": "2022-08-28",
+    "end": "2022-09-05",
+    "status": "held",
+    "source": "https://history.burningman.org/timeline/2022/",
+    "note": "Official Nevada event, not in San Francisco; included for SF exodus context. Dates exclude build week and post-event departure/cleanup."
+  },
+  {
+    "id": "folsom",
+    "name": "Folsom Street Fair",
+    "start": "2022-09-25",
+    "end": "2022-09-25",
+    "status": "held",
+    "source": "https://www.folsomstreet.org/fs-events-calendar/folsom-street-fair-1"
+  },
+  {
+    "id": "fleetWeek",
+    "name": "San Francisco Fleet Week",
+    "start": "2022-10-03",
+    "end": "2022-10-11",
+    "status": "held",
+    "source": "https://media.api.sf.gov/documents/VAC_AnnualReport_2022_8JDYoir.pdf",
+    "note": "Full festival span, not just airshow October 7-9. Fog curtailed the October 8 Blue Angels performance and cancelled their October 9 performance; the festival was not cancelled."
+  },
+  {
+    "id": "cny",
+    "name": "San Francisco Chinese New Year Parade",
+    "start": "2023-02-04",
+    "end": "2023-02-04",
+    "status": "held",
+    "source": "https://chineseparade.com/wp-content/uploads/2023/01/CNYP-2023-Year-of-the-Rabbit-Press-Release_revised.pdf"
+  },
+  {
+    "id": "burningMan",
+    "name": "Burning Man (Black Rock City, Nevada)",
+    "start": "2023-08-27",
+    "end": "2023-09-04",
+    "status": "held",
+    "source": "https://history.burningman.org/timeline/2023/",
+    "note": "Official Nevada event, not in San Francisco; included for SF exodus context. Dates exclude build week and post-event departure/cleanup. Rain disrupted access and delayed burns and departures; the event itself was not cancelled. The end is the official event span, not the final departure date."
+  },
+  {
+    "id": "folsom",
+    "name": "Folsom Street Fair",
+    "start": "2023-09-24",
+    "end": "2023-09-24",
+    "status": "held",
+    "source": "https://www.folsomstreet.org/fs-events-calendar/folsom-street-fair-1-kew4y"
+  },
+  {
+    "id": "fleetWeek",
+    "name": "San Francisco Fleet Week",
+    "start": "2023-10-02",
+    "end": "2023-10-10",
+    "status": "held",
+    "source": "https://www.sfmta.com/notices/fleet-week-2023-0",
+    "note": "Full festival span; airshow October 6-8. The threatened federal shutdown did not cancel this edition."
+  },
+  {
+    "id": "cny",
+    "name": "San Francisco Chinese New Year Parade",
+    "start": "2024-02-24",
+    "end": "2024-02-24",
+    "status": "held",
+    "source": "https://chineseparade.com/wp-content/uploads/2023/09/CNYP-2024-Festival-Parade-Date-Annoucement.pdf"
+  },
+  {
+    "id": "burningMan",
+    "name": "Burning Man (Black Rock City, Nevada)",
+    "start": "2024-08-25",
+    "end": "2024-09-02",
+    "status": "held",
+    "source": "https://journal.burningman.org/2023/10/philosophical-center/the-theme/2024-curiouser-curiouser/",
+    "note": "Official Nevada event, not in San Francisco; included for SF exodus context. Dates exclude build week and post-event departure/cleanup."
+  },
+  {
+    "id": "folsom",
+    "name": "Folsom Street Fair",
+    "start": "2024-09-29",
+    "end": "2024-09-29",
+    "status": "held",
+    "source": "https://www.folsomstreet.org/fs-events-calendar/folsom-street-fair-2"
+  },
+  {
+    "id": "fleetWeek",
+    "name": "San Francisco Fleet Week",
+    "start": "2024-10-07",
+    "end": "2024-10-14",
+    "status": "held",
+    "source": "https://www.sfmta.com/reports/fleet-week-2024",
+    "note": "Full festival span. Fog cut short the October 12 airshow and cancelled that day's Blue Angels performance, not the festival."
+  },
+  {
+    "id": "cny",
+    "name": "San Francisco Chinese New Year Parade",
+    "start": "2025-02-15",
+    "end": "2025-02-15",
+    "status": "held",
+    "source": "https://chineseparade.com/wp-content/uploads/2025/01/CNYP-2025-Year-of-the-Snake-Press-Release.pdf"
+  },
+  {
+    "id": "burningMan",
+    "name": "Burning Man (Black Rock City, Nevada)",
+    "start": "2025-08-24",
+    "end": "2025-09-01",
+    "status": "held",
+    "source": "https://survival.burningman.org/wp-content/uploads/2025/07/BMSG-2025.pdf",
+    "note": "Official Nevada event, not in San Francisco; included for SF exodus context. Dates exclude build week and post-event departure/cleanup."
+  },
+  {
+    "id": "folsom",
+    "name": "Folsom Street Fair",
+    "start": "2025-09-28",
+    "end": "2025-09-28",
+    "status": "held",
+    "source": "https://sfstandard.com/2025/09/28/folsom-street-fair-kink-festival-photos/"
+  },
+  {
+    "id": "fleetWeek",
+    "name": "San Francisco Fleet Week",
+    "start": "2025-10-05",
+    "end": "2025-10-13",
+    "status": "held",
+    "source": "https://fleetweeksf.org/liberty-guide/solve-it-think-out-of-the-box/",
+    "note": "Full festival span. The federal shutdown cancelled Blue Angels participation, not Fleet Week or the entire airshow; the Canadian Snowbirds performed."
+  },
+  {
+    "id": "cny",
+    "name": "San Francisco Chinese New Year Parade",
+    "start": "2026-03-07",
+    "end": "2026-03-07",
+    "status": "held",
+    "source": "https://chineseparade.com/wp-content/uploads/2025/02/2026-PARADE-ANNOUNCEMENT-DATE.docx.pdf"
+  },
+  {
+    "id": "burningMan",
+    "name": "Burning Man (Black Rock City, Nevada)",
+    "start": "2026-08-30",
+    "end": "2026-09-07",
+    "status": "held",
+    "source": "https://journal.burningman.org/2026/07/black-rock-city/participate-in-brc/2026-omg-sale-tickets/",
+    "note": "Official Nevada event, not in San Francisco; included for SF exodus context. Dates exclude build week and post-event departure/cleanup."
+  }
+]
