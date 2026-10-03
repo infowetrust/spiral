@@ -23,8 +23,10 @@ can take time; the target URL is not proof that deployment is complete.
 
 ## Subsequent Updates
 
-Run the data scripts only when intentionally updating snapshots, then run the
-tests documented in the README. Commit the changed files and push `main`.
+Follow the [data update guide](updating-data.md) for acquisition commands,
+manual event research, coverage checks, tests, and deployment verification.
+Run the data scripts only when intentionally updating snapshots. Commit the
+reviewed changed files and push `main`.
 GitHub Pages publishes the new commit automatically. Data does not refresh by
 itself, and no scheduled data collection is configured.
 

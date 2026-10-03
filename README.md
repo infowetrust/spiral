@@ -13,6 +13,9 @@ Lucide download icon are vendored under `vendor/`.
 
 ## Refresh Data
 
+[Step-by-step data update guide](docs/updating-data.md): fetching, event research,
+coverage checks, previewing, and publishing the refreshed snapshots.
+
 Python 3.9+ and network access are required. The updater scripts use the standard
 library and independently retain source metadata, actual coverage, and nulls.
 
@@ -21,6 +24,11 @@ python3 scripts/update-weather.py
 python3 scripts/update-sports.py
 python3 scripts/update-air.py
 ```
+
+These commands refresh local files only. Review the results and commit/push them
+to `main` to update the website. No automatic data-refresh schedule is configured.
+For annual events, research and edit the curated edition records first, then run
+`python3 scripts/build-events.py`; that command does not fetch new event dates.
 
 Current page window: **27 Sep 2016 to 26 Sep 2026**, 3,652 days. Sports schedules
 are verified through 26 Sep 2026; complete modeled weather days through

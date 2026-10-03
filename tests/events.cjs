@@ -35,6 +35,7 @@ for (const event of E.records) {
       process.env.SF_TEST_URL || "file://" + path.resolve("index.html")
     );
     await page.selectOption("#color-select", "events");
+    const dayCount = await page.evaluate(() => SF_DEBUG.dates.length);
     assert.equal(
       await page.locator("#event-options input:checked").count(),
       11
@@ -119,7 +120,7 @@ for (const event of E.records) {
       original
     );
     await page.click("[data-view='necklace']");
-    assert.equal(await page.locator("circle.cell").count(), 3652);
+    assert.equal(await page.locator("circle.cell").count(), dayCount);
     await page.uncheck("#event-symbols");
     assert.equal(await page.locator(".event-marker").count(), 0);
     await page.check("#event-symbols");

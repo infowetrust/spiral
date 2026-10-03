@@ -26,6 +26,7 @@ try {
     process.env.SF_TEST_URL || "file://" + path.resolve("index.html")
   );
   await page.waitForSelector(".cell");
+  const windowDates = await page.evaluate(() => SF_DEBUG.dates);
   const checkYears = async () => {
     await page.evaluate(
       () =>
@@ -34,8 +35,8 @@ try {
         )
     );
     assert.deepEqual(await page.locator(".year-label").allTextContents(), [
-      "2016",
-      "2026",
+      windowDates[0].slice(0, 4),
+      windowDates.at(-1).slice(0, 4),
     ]);
     assert.equal(
       await page.locator("#labels .summary-label, .date-label").count(),
@@ -67,7 +68,7 @@ try {
     });
     assert(clear, "Year labels must stay in unmarked radial space");
   };
-  assert.equal(await page.locator(".cell").count(), 3652);
+  assert.equal(await page.locator(".cell").count(), windowDates.length);
   assert.equal(await page.locator("#summary-plot").count(), 0);
   for (const [width, height] of [
     [1440, 900],
@@ -238,7 +239,7 @@ try {
   );
   await page.locator('[data-view="necklace"]').click();
   await checkYears();
-  assert.equal(await page.locator("circle.cell").count(), 3652);
+  assert.equal(await page.locator("circle.cell").count(), windowDates.length);
   await page.locator('[data-view="area"]').click();
   await page.locator("#export").click();
   for (const scope of ["wheel", "page"]) {
