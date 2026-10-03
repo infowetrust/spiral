@@ -24,6 +24,9 @@ class Element {
   addEventListener(k, f) {
     this.listeners[k] = f;
   }
+  getBoundingClientRect() {
+    return { width: this.clientWidth };
+  }
 }
 const markup = fs.readFileSync("index.html", "utf8");
 const nodes = Object.fromEntries(
@@ -47,6 +50,7 @@ const context = vm.createContext({
   window: {},
   document,
   console,
+  getComputedStyle: () => ({ fontSize: "12px" }),
   d3: require("../vendor/d3.v7.min.js"),
 });
 for (const name of ["weather", "sports", "air", "events"])

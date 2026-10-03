@@ -545,26 +545,30 @@
         g
       );
     }
-    const compact =
-      document.querySelector(".stage").clientWidth < 1000 ||
-      state.view === "necklace";
+    const scale = $("spiral").getBoundingClientRect().width / 1000;
+    const fontSize =
+      parseFloat(
+        getComputedStyle(document.querySelector(".center-unit")).fontSize
+      ) / scale;
+    const gap = 4 / scale;
     [0, n - 1].forEach((i, k) => {
       const angle = geo.angle(i);
-      // Tangential type stays clear of the daily bands. On smaller wheels,
-      // the inner year sits inside the summary baseline instead of its narrow outer gap.
-      const radius = k ? 453 : compact ? 134 : 206.5;
+      // The oldest year occupies the empty side of the spiral's starting edge.
+      const radius =
+        state.view === "area" ? geo.radius(i / C.YEAR + 0.5) : k ? 430 : 215;
       const [x, y] = geo.point(radius, angle);
-      let rotation = ((((angle * 180) / Math.PI + 90) % 360) + 360) % 360;
-      if (rotation > 90 && rotation < 270) rotation += 180;
+      const side = (k ? 1 : -1) * Math.sign(Math.cos(angle));
       el(
         "text",
         {
           class: "year-label",
-          x,
-          y,
-          "text-anchor": "middle",
+          x: x + side * gap,
+          y: k
+            ? y
+            : y - state.direction * Math.cos(angle) * (fontSize / 2 + gap),
+          "text-anchor": side > 0 ? "start" : "end",
           "dominant-baseline": "central",
-          transform: `rotate(${rotation} ${x} ${y})`,
+          "font-size": fontSize,
         },
         dates[i].slice(0, 4),
         g
@@ -1297,10 +1301,10 @@
       );
     drawCells();
     drawEventMarkers();
-    drawLabels();
     renderLegend();
     drawSeason();
     summaryCopy();
+    drawLabels();
     renderSources();
     $("tooltip").hidden = true;
     if (state.selected !== null) selectDay(state.selected, state.pinned);

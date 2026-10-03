@@ -410,7 +410,6 @@ select:disabled {
   font-size: 14px;
 }
 .year-label {
-  font-size: 12px;
   fill: var(--muted) !important;
 }
 .boundary {
@@ -598,16 +597,12 @@ select:disabled {
   .month-label {
     font-size: 18px;
   }
-  .year-label {
-    font-size: 18px;
-  }
   .summary-label {
     font-size: 17px;
   }
 }
 @container (max-width:650px) {
   .month-label,
-  .year-label,
   .summary-label {
     font-size: 24px;
   }
@@ -620,7 +615,6 @@ select:disabled {
     font-size: 10px;
   }
   .month-label,
-  .year-label,
   .summary-label {
     font-size: 32px;
   }

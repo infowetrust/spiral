@@ -44,29 +44,39 @@ try {
     );
     const clear = await page.evaluate(() => {
       const svg = document.querySelector("#spiral");
-      const compact =
-        document.querySelector(".stage").clientWidth < 1000 ||
-        SF_DEBUG.state.view === "necklace";
+      const subtitleSize = parseFloat(
+        getComputedStyle(document.querySelector(".center-unit")).fontSize
+      );
+      const cells = [...document.querySelectorAll(".cell")].map((cell) =>
+        cell.getBoundingClientRect()
+      );
       return [...document.querySelectorAll(".year-label")].every((label, i) => {
-        const b = label.getBBox();
-        const transform = svg.getCTM().inverse().multiply(label.getCTM());
-        const radii = [0, 0.5, 1].flatMap((x) =>
-          [0, 0.5, 1].map((y) => {
-            const p = new DOMPoint(
-              b.x + x * b.width,
-              b.y + y * b.height
-            ).matrixTransform(transform);
-            return Math.hypot(p.x - 500, p.y - 500);
-          })
+        const b = label.getBoundingClientRect();
+        const endpoint = cells[i ? cells.length - 1 : 0];
+        const gap = Math.hypot(
+          Math.max(0, endpoint.left - b.right, b.left - endpoint.right),
+          Math.max(0, endpoint.top - b.bottom, b.top - endpoint.bottom)
         );
-        return i
-          ? Math.min(...radii) > 432
-          : compact
-          ? Math.min(...radii) > 110 && Math.max(...radii) < 158
-          : Math.min(...radii) > 199 && Math.max(...radii) < 215;
+        const fontSize =
+          parseFloat(getComputedStyle(label).fontSize) * svg.getScreenCTM().a;
+        return (
+          !label.hasAttribute("transform") &&
+          Math.abs(fontSize - subtitleSize) < 0.1 &&
+          gap <= 12 &&
+          cells.every(
+            (cell) =>
+              b.right <= cell.left ||
+              b.left >= cell.right ||
+              b.bottom <= cell.top ||
+              b.top >= cell.bottom
+          )
+        );
       });
     });
-    assert(clear, "Year labels must stay in unmarked radial space");
+    assert(
+      clear,
+      "Years must be horizontal, subtitle-sized, close to endpoints, and clear of daily marks"
+    );
   };
   assert.equal(await page.locator(".cell").count(), windowDates.length);
   assert.equal(await page.locator("#summary-plot").count(), 0);
